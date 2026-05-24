@@ -1,0 +1,17 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+
+namespace ET
+{
+    public class ET_NhanVienView
+    {
+        public string MaNhanVien { get; set; }
+        public string HoTen { get; set; }
+        public string TenPhongBan { get; set; } 
+        public string TrangThaiLamViec { get; set; }
+    }
+}
