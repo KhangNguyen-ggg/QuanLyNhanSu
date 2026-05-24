@@ -95,7 +95,7 @@
             this.tabMain.Location = new System.Drawing.Point(0, 0);
             this.tabMain.Name = "tabMain";
             this.tabMain.SelectedIndex = 0;
-            this.tabMain.Size = new System.Drawing.Size(1280, 800);
+            this.tabMain.Size = new System.Drawing.Size(1262, 800);
             this.tabMain.TabButtonHoverState.BorderColor = System.Drawing.Color.Empty;
             this.tabMain.TabButtonHoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(52)))), ((int)(((byte)(70)))));
             this.tabMain.TabButtonHoverState.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
@@ -122,7 +122,7 @@
             this.pageNhanVien.Controls.Add(this.pnlLeft);
             this.pageNhanVien.Location = new System.Drawing.Point(124, 4);
             this.pageNhanVien.Name = "pageNhanVien";
-            this.pageNhanVien.Size = new System.Drawing.Size(1152, 792);
+            this.pageNhanVien.Size = new System.Drawing.Size(1134, 792);
             this.pageNhanVien.TabIndex = 0;
             this.pageNhanVien.Text = "Nhân viên";
             // 
@@ -132,7 +132,7 @@
             this.pnlRight.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlRight.Location = new System.Drawing.Point(467, 0);
             this.pnlRight.Name = "pnlRight";
-            this.pnlRight.Size = new System.Drawing.Size(685, 792);
+            this.pnlRight.Size = new System.Drawing.Size(667, 792);
             this.pnlRight.TabIndex = 0;
             // 
             // tabRight
@@ -144,7 +144,7 @@
             this.tabRight.Location = new System.Drawing.Point(0, 0);
             this.tabRight.Name = "tabRight";
             this.tabRight.SelectedIndex = 0;
-            this.tabRight.Size = new System.Drawing.Size(685, 792);
+            this.tabRight.Size = new System.Drawing.Size(667, 792);
             this.tabRight.TabButtonHoverState.BorderColor = System.Drawing.Color.Empty;
             this.tabRight.TabButtonHoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(52)))), ((int)(((byte)(70)))));
             this.tabRight.TabButtonHoverState.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
@@ -190,7 +190,7 @@
             this.pageChiTiet.Controls.Add(this.gbChiTiet);
             this.pageChiTiet.Location = new System.Drawing.Point(4, 39);
             this.pageChiTiet.Name = "pageChiTiet";
-            this.pageChiTiet.Size = new System.Drawing.Size(677, 749);
+            this.pageChiTiet.Size = new System.Drawing.Size(659, 749);
             this.pageChiTiet.TabIndex = 0;
             this.pageChiTiet.Text = "Chi tiết nhân viên";
             this.pageChiTiet.Click += new System.EventHandler(this.pageChiTiet_Click);
@@ -456,7 +456,7 @@
             this.gbChiTiet.ForeColor = System.Drawing.Color.IndianRed;
             this.gbChiTiet.Location = new System.Drawing.Point(13, 265);
             this.gbChiTiet.Name = "gbChiTiet";
-            this.gbChiTiet.Size = new System.Drawing.Size(642, 350);
+            this.gbChiTiet.Size = new System.Drawing.Size(624, 350);
             this.gbChiTiet.TabIndex = 15;
             this.gbChiTiet.Text = "Thông tin chi tiết nhân viên";
             // 
@@ -465,7 +465,7 @@
             this.lblSDT.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblSDT.Font = new System.Drawing.Font("Segoe UI", 8.5F);
             this.lblSDT.ForeColor = System.Drawing.Color.Black;
-            this.lblSDT.Location = new System.Drawing.Point(42, 52);
+            this.lblSDT.Location = new System.Drawing.Point(24, 52);
             this.lblSDT.Name = "lblSDT";
             this.lblSDT.Size = new System.Drawing.Size(100, 23);
             this.lblSDT.TabIndex = 0;
@@ -478,7 +478,7 @@
             this.txtSoDienThoai.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtSoDienThoai.DefaultText = "";
             this.txtSoDienThoai.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtSoDienThoai.Location = new System.Drawing.Point(153, 45);
+            this.txtSoDienThoai.Location = new System.Drawing.Point(135, 45);
             this.txtSoDienThoai.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtSoDienThoai.Name = "txtSoDienThoai";
             this.txtSoDienThoai.PlaceholderText = "";
@@ -491,7 +491,7 @@
             this.lblDiaChi.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblDiaChi.Font = new System.Drawing.Font("Segoe UI", 8.5F);
             this.lblDiaChi.ForeColor = System.Drawing.Color.Black;
-            this.lblDiaChi.Location = new System.Drawing.Point(42, 92);
+            this.lblDiaChi.Location = new System.Drawing.Point(24, 92);
             this.lblDiaChi.Name = "lblDiaChi";
             this.lblDiaChi.Size = new System.Drawing.Size(100, 23);
             this.lblDiaChi.TabIndex = 2;
@@ -504,7 +504,7 @@
             this.txtDiaChi.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtDiaChi.DefaultText = "";
             this.txtDiaChi.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtDiaChi.Location = new System.Drawing.Point(153, 85);
+            this.txtDiaChi.Location = new System.Drawing.Point(135, 85);
             this.txtDiaChi.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtDiaChi.Name = "txtDiaChi";
             this.txtDiaChi.PlaceholderText = "";
@@ -517,7 +517,7 @@
             this.lblEmailCN.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblEmailCN.Font = new System.Drawing.Font("Segoe UI", 8.5F);
             this.lblEmailCN.ForeColor = System.Drawing.Color.Black;
-            this.lblEmailCN.Location = new System.Drawing.Point(42, 132);
+            this.lblEmailCN.Location = new System.Drawing.Point(24, 132);
             this.lblEmailCN.Name = "lblEmailCN";
             this.lblEmailCN.Size = new System.Drawing.Size(100, 23);
             this.lblEmailCN.TabIndex = 4;
@@ -530,7 +530,7 @@
             this.txtEmailCaNhan.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtEmailCaNhan.DefaultText = "";
             this.txtEmailCaNhan.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtEmailCaNhan.Location = new System.Drawing.Point(153, 125);
+            this.txtEmailCaNhan.Location = new System.Drawing.Point(135, 125);
             this.txtEmailCaNhan.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtEmailCaNhan.Name = "txtEmailCaNhan";
             this.txtEmailCaNhan.PlaceholderText = "";
@@ -543,7 +543,7 @@
             this.lblEmailCT.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblEmailCT.Font = new System.Drawing.Font("Segoe UI", 8.5F);
             this.lblEmailCT.ForeColor = System.Drawing.Color.Black;
-            this.lblEmailCT.Location = new System.Drawing.Point(42, 172);
+            this.lblEmailCT.Location = new System.Drawing.Point(24, 172);
             this.lblEmailCT.Name = "lblEmailCT";
             this.lblEmailCT.Size = new System.Drawing.Size(100, 23);
             this.lblEmailCT.TabIndex = 6;
@@ -556,7 +556,7 @@
             this.txtEmailCongTy.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtEmailCongTy.DefaultText = "";
             this.txtEmailCongTy.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtEmailCongTy.Location = new System.Drawing.Point(153, 165);
+            this.txtEmailCongTy.Location = new System.Drawing.Point(135, 165);
             this.txtEmailCongTy.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtEmailCongTy.Name = "txtEmailCongTy";
             this.txtEmailCongTy.PlaceholderText = "";
@@ -569,7 +569,7 @@
             this.lblMST.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblMST.Font = new System.Drawing.Font("Segoe UI", 8.5F);
             this.lblMST.ForeColor = System.Drawing.Color.Black;
-            this.lblMST.Location = new System.Drawing.Point(42, 212);
+            this.lblMST.Location = new System.Drawing.Point(24, 212);
             this.lblMST.Name = "lblMST";
             this.lblMST.Size = new System.Drawing.Size(100, 23);
             this.lblMST.TabIndex = 8;
@@ -582,7 +582,7 @@
             this.txtMaSoThue.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtMaSoThue.DefaultText = "";
             this.txtMaSoThue.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtMaSoThue.Location = new System.Drawing.Point(153, 205);
+            this.txtMaSoThue.Location = new System.Drawing.Point(135, 205);
             this.txtMaSoThue.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtMaSoThue.Name = "txtMaSoThue";
             this.txtMaSoThue.PlaceholderText = "";
@@ -595,7 +595,7 @@
             this.lblTK.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblTK.Font = new System.Drawing.Font("Segoe UI", 8.5F);
             this.lblTK.ForeColor = System.Drawing.Color.Black;
-            this.lblTK.Location = new System.Drawing.Point(42, 252);
+            this.lblTK.Location = new System.Drawing.Point(24, 252);
             this.lblTK.Name = "lblTK";
             this.lblTK.Size = new System.Drawing.Size(100, 23);
             this.lblTK.TabIndex = 10;
@@ -608,7 +608,7 @@
             this.txtSoTK.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtSoTK.DefaultText = "";
             this.txtSoTK.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtSoTK.Location = new System.Drawing.Point(153, 245);
+            this.txtSoTK.Location = new System.Drawing.Point(135, 245);
             this.txtSoTK.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtSoTK.Name = "txtSoTK";
             this.txtSoTK.PlaceholderText = "";
@@ -621,7 +621,7 @@
             this.lblCCCD.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblCCCD.Font = new System.Drawing.Font("Segoe UI", 8.5F);
             this.lblCCCD.ForeColor = System.Drawing.Color.Black;
-            this.lblCCCD.Location = new System.Drawing.Point(331, 132);
+            this.lblCCCD.Location = new System.Drawing.Point(313, 132);
             this.lblCCCD.Name = "lblCCCD";
             this.lblCCCD.Size = new System.Drawing.Size(100, 23);
             this.lblCCCD.TabIndex = 12;
@@ -634,7 +634,7 @@
             this.txtCCCD.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtCCCD.DefaultText = "";
             this.txtCCCD.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtCCCD.Location = new System.Drawing.Point(435, 125);
+            this.txtCCCD.Location = new System.Drawing.Point(417, 125);
             this.txtCCCD.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtCCCD.Name = "txtCCCD";
             this.txtCCCD.PlaceholderText = "";
@@ -647,7 +647,7 @@
             this.lblNgayCap.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblNgayCap.Font = new System.Drawing.Font("Segoe UI", 8.5F);
             this.lblNgayCap.ForeColor = System.Drawing.Color.Black;
-            this.lblNgayCap.Location = new System.Drawing.Point(331, 172);
+            this.lblNgayCap.Location = new System.Drawing.Point(313, 172);
             this.lblNgayCap.Name = "lblNgayCap";
             this.lblNgayCap.Size = new System.Drawing.Size(100, 23);
             this.lblNgayCap.TabIndex = 14;
@@ -662,7 +662,7 @@
             this.dtpNgayCapCCCD.FillColor = System.Drawing.Color.White;
             this.dtpNgayCapCCCD.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.dtpNgayCapCCCD.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            this.dtpNgayCapCCCD.Location = new System.Drawing.Point(436, 165);
+            this.dtpNgayCapCCCD.Location = new System.Drawing.Point(418, 165);
             this.dtpNgayCapCCCD.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.dtpNgayCapCCCD.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.dtpNgayCapCCCD.Name = "dtpNgayCapCCCD";
@@ -675,7 +675,7 @@
             this.lblNoiCap.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblNoiCap.Font = new System.Drawing.Font("Segoe UI", 8.5F);
             this.lblNoiCap.ForeColor = System.Drawing.Color.Black;
-            this.lblNoiCap.Location = new System.Drawing.Point(331, 212);
+            this.lblNoiCap.Location = new System.Drawing.Point(313, 212);
             this.lblNoiCap.Name = "lblNoiCap";
             this.lblNoiCap.Size = new System.Drawing.Size(100, 23);
             this.lblNoiCap.TabIndex = 16;
@@ -688,7 +688,7 @@
             this.txtNoiCapCCCD.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtNoiCapCCCD.DefaultText = "";
             this.txtNoiCapCCCD.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtNoiCapCCCD.Location = new System.Drawing.Point(436, 205);
+            this.txtNoiCapCCCD.Location = new System.Drawing.Point(418, 205);
             this.txtNoiCapCCCD.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtNoiCapCCCD.Name = "txtNoiCapCCCD";
             this.txtNoiCapCCCD.PlaceholderText = "";
@@ -701,7 +701,7 @@
             this.lblNganHang.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblNganHang.Font = new System.Drawing.Font("Segoe UI", 8.5F);
             this.lblNganHang.ForeColor = System.Drawing.Color.Black;
-            this.lblNganHang.Location = new System.Drawing.Point(331, 252);
+            this.lblNganHang.Location = new System.Drawing.Point(313, 252);
             this.lblNganHang.Name = "lblNganHang";
             this.lblNganHang.Size = new System.Drawing.Size(100, 23);
             this.lblNganHang.TabIndex = 18;
@@ -714,7 +714,7 @@
             this.txtTenNganHang.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtTenNganHang.DefaultText = "";
             this.txtTenNganHang.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtTenNganHang.Location = new System.Drawing.Point(436, 245);
+            this.txtTenNganHang.Location = new System.Drawing.Point(418, 245);
             this.txtTenNganHang.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtTenNganHang.Name = "txtTenNganHang";
             this.txtTenNganHang.PlaceholderText = "";
@@ -755,7 +755,7 @@
             this.lblPhongBan.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.lblPhongBan.Location = new System.Drawing.Point(10, 20);
             this.lblPhongBan.Name = "lblPhongBan";
-            this.lblPhongBan.Size = new System.Drawing.Size(65, 15);
+            this.lblPhongBan.Size = new System.Drawing.Size(80, 20);
             this.lblPhongBan.TabIndex = 0;
             this.lblPhongBan.Text = "Phòng ban";
             // 
@@ -782,7 +782,7 @@
             this.chkChonPB.Font = new System.Drawing.Font("Segoe UI", 8.5F);
             this.chkChonPB.Location = new System.Drawing.Point(235, 20);
             this.chkChonPB.Name = "chkChonPB";
-            this.chkChonPB.Size = new System.Drawing.Size(55, 19);
+            this.chkChonPB.Size = new System.Drawing.Size(65, 24);
             this.chkChonPB.TabIndex = 2;
             this.chkChonPB.Text = "Chọn";
             this.chkChonPB.UncheckedState.BorderRadius = 0;
@@ -794,7 +794,7 @@
             this.lblTimKiem.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.lblTimKiem.Location = new System.Drawing.Point(10, 60);
             this.lblTimKiem.Name = "lblTimKiem";
-            this.lblTimKiem.Size = new System.Drawing.Size(54, 15);
+            this.lblTimKiem.Size = new System.Drawing.Size(67, 20);
             this.lblTimKiem.TabIndex = 3;
             this.lblTimKiem.Text = "Tên / Mã";
             // 
@@ -889,9 +889,8 @@
             // FormNhanVien
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(1280, 800);
+            this.ClientSize = new System.Drawing.Size(1262, 800);
             this.Controls.Add(this.tabMain);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormNhanVien";
             this.Text = "FormNhanVien";
             this.Load += new System.EventHandler(this.FormNhanVien_Load);
