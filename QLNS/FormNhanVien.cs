@@ -221,7 +221,9 @@ namespace QLNS
         {
             try
             {
-
+                FormThemNhanVien formThem = new FormThemNhanVien();
+                formThem.ShowDialog();
+                LoadNhanVien();
 
             }
             catch (Exception ex)
@@ -233,6 +235,21 @@ namespace QLNS
         private void gbChiTiet_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnXoa_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                FormXoaNhanVien formXoa = new FormXoaNhanVien();
+                formXoa.ShowDialog();
+                LoadNhanVien();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
     }
 }

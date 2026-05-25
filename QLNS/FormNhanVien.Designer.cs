@@ -28,7 +28,6 @@
             this.btnSua = new Guna.UI2.WinForms.Guna2Button();
             this.btnXoa = new Guna.UI2.WinForms.Guna2Button();
             this.btnThem = new Guna.UI2.WinForms.Guna2Button();
-            this.picAvatar = new Guna.UI2.WinForms.Guna2PictureBox();
             this.btnChonAnh = new Guna.UI2.WinForms.Guna2Button();
             this.btnLuu = new Guna.UI2.WinForms.Guna2Button();
             this.lblMaNV = new System.Windows.Forms.Label();
@@ -74,15 +73,16 @@
             this.btnTimKiem = new Guna.UI2.WinForms.Guna2Button();
             this.dgvNhanVien1 = new Guna.UI2.WinForms.Guna2DataGridView();
             this.tabPageXuatDS = new System.Windows.Forms.TabPage();
+            this.picAvatar = new Guna.UI2.WinForms.Guna2PictureBox();
             this.tabMain.SuspendLayout();
             this.pageNhanVien.SuspendLayout();
             this.pnlRight.SuspendLayout();
             this.tabRight.SuspendLayout();
             this.pageChiTiet.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picAvatar)).BeginInit();
             this.gbChiTiet.SuspendLayout();
             this.pnlLeft.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNhanVien1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picAvatar)).BeginInit();
             this.SuspendLayout();
             // 
             // tabMain
@@ -230,6 +230,7 @@
             this.btnXoa.Size = new System.Drawing.Size(144, 45);
             this.btnXoa.TabIndex = 16;
             this.btnXoa.Text = "Xóa";
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // btnThem
             // 
@@ -249,18 +250,6 @@
             this.btnThem.TabIndex = 16;
             this.btnThem.Text = "Thêm";
             this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
-            // 
-            // picAvatar
-            // 
-            this.picAvatar.BorderRadius = 4;
-            this.picAvatar.Image = global::QLNS.Properties.Resources.ConNguoi;
-            this.picAvatar.ImageRotate = 0F;
-            this.picAvatar.Location = new System.Drawing.Point(20, 15);
-            this.picAvatar.Name = "picAvatar";
-            this.picAvatar.Size = new System.Drawing.Size(120, 150);
-            this.picAvatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.picAvatar.TabIndex = 0;
-            this.picAvatar.TabStop = false;
             // 
             // btnChonAnh
             // 
@@ -727,7 +716,7 @@
             this.pageBaoHiem.BackColor = System.Drawing.Color.White;
             this.pageBaoHiem.Location = new System.Drawing.Point(4, 39);
             this.pageBaoHiem.Name = "pageBaoHiem";
-            this.pageBaoHiem.Size = new System.Drawing.Size(677, 749);
+            this.pageBaoHiem.Size = new System.Drawing.Size(659, 749);
             this.pageBaoHiem.TabIndex = 1;
             this.pageBaoHiem.Text = "Hồ sơ bảo hiểm";
             // 
@@ -882,9 +871,21 @@
             this.tabPageXuatDS.BackColor = System.Drawing.Color.White;
             this.tabPageXuatDS.Location = new System.Drawing.Point(124, 4);
             this.tabPageXuatDS.Name = "tabPageXuatDS";
-            this.tabPageXuatDS.Size = new System.Drawing.Size(1152, 792);
+            this.tabPageXuatDS.Size = new System.Drawing.Size(1134, 792);
             this.tabPageXuatDS.TabIndex = 1;
             this.tabPageXuatDS.Text = "Xuất DSNV";
+            // 
+            // picAvatar
+            // 
+            this.picAvatar.BorderRadius = 4;
+            this.picAvatar.Image = global::QLNS.Properties.Resources.ConNguoi;
+            this.picAvatar.ImageRotate = 0F;
+            this.picAvatar.Location = new System.Drawing.Point(20, 15);
+            this.picAvatar.Name = "picAvatar";
+            this.picAvatar.Size = new System.Drawing.Size(120, 150);
+            this.picAvatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.picAvatar.TabIndex = 0;
+            this.picAvatar.TabStop = false;
             // 
             // FormNhanVien
             // 
@@ -899,11 +900,11 @@
             this.pnlRight.ResumeLayout(false);
             this.tabRight.ResumeLayout(false);
             this.pageChiTiet.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.picAvatar)).EndInit();
             this.gbChiTiet.ResumeLayout(false);
             this.pnlLeft.ResumeLayout(false);
             this.pnlLeft.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNhanVien1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picAvatar)).EndInit();
             this.ResumeLayout(false);
 
         }

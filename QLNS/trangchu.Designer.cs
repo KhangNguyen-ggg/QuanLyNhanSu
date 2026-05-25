@@ -269,7 +269,7 @@
             this.pnDesktop.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnDesktop.Location = new System.Drawing.Point(0, 200);
             this.pnDesktop.Name = "pnDesktop";
-            this.pnDesktop.Size = new System.Drawing.Size(1545, 1016);
+            this.pnDesktop.Size = new System.Drawing.Size(1545, 855);
             this.pnDesktop.TabIndex = 3;
             this.pnDesktop.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
@@ -333,7 +333,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1545, 1216);
+            this.ClientSize = new System.Drawing.Size(1545, 1055);
             this.Controls.Add(this.pnDesktop);
             this.Controls.Add(this.ribbon1);
             this.Controls.Add(this.menuStrip1);

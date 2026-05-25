@@ -27,5 +27,12 @@ namespace BUS
         {
             return dAL_ChiTietNhanVien.CapNhatHinhAnh(maNV, hinhAnh);
         }
+
+        //thêm
+        public bool ThemChiTietNhanVien(ET_ChiTietNV ct)
+        {
+            return dAL_ChiTietNhanVien.ThemChiTiet(ct);
+        }
+
     }
 }

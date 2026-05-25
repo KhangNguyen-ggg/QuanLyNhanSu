@@ -11,8 +11,8 @@ namespace DAL
 
     public class DAL_NhanVien
     {
-        QuanLyNhanSuDataContext db = new QuanLyNhanSuDataContext();
-        
+        //QuanLyNhanSuDataContext db = new QuanLyNhanSuDataContext();
+
         //lấy ds
         public List<ET_NhanVienView> LayDanhSachLenGrid()
         {
@@ -30,7 +30,7 @@ namespace DAL
                              TrangThaiLamViec = nv.TrangThaiLamViec
                          };
 
-                return ds.ToList(); 
+                return ds.ToList();
             }
         }
 
@@ -74,6 +74,7 @@ namespace DAL
                     query = query.Where(x => x.nv.MaPhongBan == maPhongBan);
                 }
 
+                // Tìm kiếm theo Mã NV hoặc Họ Tên, từ khóa có thể là một phần của Mã NV hoặc Họ Tên
                 if (!string.IsNullOrEmpty(tuKhoa))
                 {
                     query = query.Where(x => x.nv.MaNhanVien.Contains(tuKhoa) || x.nv.HoTen.Contains(tuKhoa));
@@ -92,13 +93,27 @@ namespace DAL
         }
 
         //thêm
-        public bool ThemNhanVien(NhanVien nv)
+        public bool ThemNhanVien(ET_NhanVien nv)
         {
             try
             {
-                db.NhanViens.InsertOnSubmit(nv);
-                db.SubmitChanges();
-                return true;
+                using (QuanLyNhanSuDataContext db = new QuanLyNhanSuDataContext())
+                {
+                    NhanVien NhanVien = new NhanVien
+                    {
+                        MaNhanVien = nv.MaNhanVien,
+                        HoTen = nv.HoTen,
+                        GioiTinh = nv.GioiTinh,
+                        NgaySinh = nv.NgaySinh,
+                        MaPhongBan = nv.MaPhongBan,
+                        MaChucDanh = nv.MaChucDanh,
+                        TrangThaiLamViec = nv.TrangThaiLamViec
+                    };
+
+                    db.NhanViens.InsertOnSubmit(NhanVien);
+                    db.SubmitChanges();
+                    return true;
+                }
             }
             catch
             {
@@ -121,7 +136,7 @@ namespace DAL
             }
         }
         //sửa
-        public bool SuaNhanVien(NhanVien nv)
+        public bool SuaNhanVien(ET_NhanVien nv)
         {
             using (QuanLyNhanSuDataContext db = new QuanLyNhanSuDataContext())
             {
@@ -142,6 +157,6 @@ namespace DAL
             }
         }
 
-        
+
     }
 }

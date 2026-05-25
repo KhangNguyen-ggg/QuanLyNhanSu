@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace QLNS
 {
-    public partial class SuaNhanVien : Form
+    public partial class FormSuaNhanVien : Form
     {
-        public SuaNhanVien()
+        public FormSuaNhanVien()
         {
             InitializeComponent();
+        }
+
+        private void SuaNhanVien_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

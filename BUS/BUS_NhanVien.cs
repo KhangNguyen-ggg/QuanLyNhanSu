@@ -28,7 +28,7 @@ namespace BUS
         }
 
         //thêm
-        public bool ThemNhanVien(NhanVien nv)
+        public bool ThemNhanVien(ET_NhanVien nv)
         {
             return dAL_NhanVien.ThemNhanVien(nv);
         }

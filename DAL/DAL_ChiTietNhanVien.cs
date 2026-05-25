@@ -33,7 +33,7 @@ namespace DAL
             return chiTiet;
         }
 
-        // Xóa chữ List<>
+        // 
         public ET_ChiTietNV LayThongTinChiTiet(string maNV)
         {
             using (QuanLyNhanSuDataContext db = new QuanLyNhanSuDataContext())
@@ -81,6 +81,36 @@ namespace DAL
                     db.SubmitChanges();
                     return true;
                 }
+                return false;
+            }
+        }
+        public bool ThemChiTiet(ET_ChiTietNV ct)
+        {
+            try
+            {
+                using (QuanLyNhanSuDataContext db = new QuanLyNhanSuDataContext())
+                {
+                    ChiTietNhanVien chiTiet = new ChiTietNhanVien
+                    {
+                        MaNhanVien = ct.MaNhanVien,
+                        SoDienThoai = ct.SoDienThoai,
+                        EmailCaNhan = ct.EmailCaNhan,
+                        EmailCongTy = ct.EmailCongTy,
+                        DiaChiThuongTru = ct.DiaChiThuongTru,
+                        SoCCCD = ct.SoCCCD,
+                        NgayCapCCCD = ct.NgayCapCCCD,
+                        NoiCapCCCD = ct.NoiCapCCCD,
+                        MaSoThue = ct.MaSoThue,
+                        SoTaiKhoan = ct.SoTaiKhoan,
+                        TenNganHang = ct.TenNganHang
+                    };
+                    db.ChiTietNhanViens.InsertOnSubmit(chiTiet);
+                    db.SubmitChanges();
+                    return true;
+                }
+            }
+            catch
+            {
                 return false;
             }
         }

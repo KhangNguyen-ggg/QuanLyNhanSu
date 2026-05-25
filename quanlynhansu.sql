@@ -75,7 +75,9 @@ CREATE TABLE ChiTietNhanVien (
     MaSoThue VARCHAR(14) UNIQUE,
     SoTaiKhoan VARCHAR(20),
     TenNganHang NVARCHAR(100),
-    FOREIGN KEY (MaNhanVien) REFERENCES NhanVien(MaNhanVien)
+    -- ĐÃ BỔ SUNG CỘT HINHANH --
+    HinhAnh VARBINARY(MAX),
+    FOREIGN KEY (MaNhanVien) REFERENCES NhanVien(MaNhanVien) ON DELETE CASCADE
 );
 
 -- ⭐ [BẢNG MỚI THÊM VÀO] ⭐ (Thuế / Giảm trừ)
@@ -87,7 +89,7 @@ CREATE TABLE GiamTruGiaCanh (
     MaSoThue VARCHAR(14),
     NgayBatDau DATE,
     NgayKetThuc DATE,
-    FOREIGN KEY (MaNhanVien) REFERENCES NhanVien(MaNhanVien)
+    FOREIGN KEY (MaNhanVien) REFERENCES NhanVien(MaNhanVien) ON DELETE CASCADE
 );
 
 -- =====================================================================
@@ -153,7 +155,7 @@ CREATE TABLE HopDongLaoDong (
     NgayHetHan DATE,
     LuongCung DECIMAL(18,2) NOT NULL, 
     TrangThai NVARCHAR(50), 
-    FOREIGN KEY (MaNhanVien) REFERENCES NhanVien(MaNhanVien)
+    FOREIGN KEY (MaNhanVien) REFERENCES NhanVien(MaNhanVien) ON DELETE CASCADE
 );
 
 -- ⭐ [BẢNG MỚI THÊM VÀO] ⭐ (Bảo hiểm xã hội)
@@ -164,7 +166,7 @@ CREATE TABLE BaoHiemXaHoi (
     NoiDangKyKhamBenh NVARCHAR(200),
     MucDong DECIMAL(18,2), 
     TrangThai NVARCHAR(50),
-    FOREIGN KEY (MaNhanVien) REFERENCES NhanVien(MaNhanVien)
+    FOREIGN KEY (MaNhanVien) REFERENCES NhanVien(MaNhanVien) ON DELETE CASCADE
 );
 
 CREATE TABLE PhuCapNhanVien (
@@ -173,7 +175,7 @@ CREATE TABLE PhuCapNhanVien (
     NgayCapTien DATE,
     LyDoCap NVARCHAR(255),
     PRIMARY KEY (MaNhanVien, MaPhuCap, NgayCapTien),
-    FOREIGN KEY (MaNhanVien) REFERENCES NhanVien(MaNhanVien),
+    FOREIGN KEY (MaNhanVien) REFERENCES NhanVien(MaNhanVien) ON DELETE CASCADE,
     FOREIGN KEY (MaPhuCap) REFERENCES DanhMucPhuCap(MaPhuCap)
 );
 
@@ -190,7 +192,7 @@ CREATE TABLE DataChamCong (
     SoGioOT DECIMAL(4,2), 
     MaHinhThuc VARCHAR(20),
     TrangThai NVARCHAR(50), 
-    FOREIGN KEY (MaNhanVien) REFERENCES NhanVien(MaNhanVien),
+    FOREIGN KEY (MaNhanVien) REFERENCES NhanVien(MaNhanVien) ON DELETE CASCADE,
     FOREIGN KEY (MaCa) REFERENCES CaLamViec(MaCa),
     FOREIGN KEY (MaHinhThuc) REFERENCES HinhThucChamCong(MaHinhThuc)
 );
@@ -203,7 +205,7 @@ CREATE TABLE DonNghiPhep (
     DenNgay DATETIME,
     LyDo NVARCHAR(255),
     TrangThaiDuyet NVARCHAR(50), 
-    FOREIGN KEY (MaNhanVien) REFERENCES NhanVien(MaNhanVien)
+    FOREIGN KEY (MaNhanVien) REFERENCES NhanVien(MaNhanVien) ON DELETE CASCADE
 );
 
 CREATE TABLE DanhGiaKPI (
@@ -215,7 +217,7 @@ CREATE TABLE DanhGiaKPI (
     XepLoai NVARCHAR(50), 
     NhanXet NVARCHAR(500),
     MaNguoiDanhGia VARCHAR(20), 
-    FOREIGN KEY (MaNhanVien) REFERENCES NhanVien(MaNhanVien),
+    FOREIGN KEY (MaNhanVien) REFERENCES NhanVien(MaNhanVien) ON DELETE CASCADE,
     FOREIGN KEY (MaNguoiDanhGia) REFERENCES NhanVien(MaNhanVien)
 );
 
@@ -227,7 +229,7 @@ CREATE TABLE KhenThuongKyLuat (
     LyDo NVARCHAR(255),
     SoTien DECIMAL(18,2) DEFAULT 0,
     NguoiQuyetDinh VARCHAR(20),
-    FOREIGN KEY (MaNhanVien) REFERENCES NhanVien(MaNhanVien)
+    FOREIGN KEY (MaNhanVien) REFERENCES NhanVien(MaNhanVien) ON DELETE CASCADE
 );
 
 -- =====================================================================
@@ -243,7 +245,7 @@ CREATE TABLE TamUng (
     ThangKhauTru INT,
     NamKhauTru INT,
     NguoiDuyet VARCHAR(20),
-    FOREIGN KEY (MaNhanVien) REFERENCES NhanVien(MaNhanVien),
+    FOREIGN KEY (MaNhanVien) REFERENCES NhanVien(MaNhanVien) ON DELETE CASCADE,
     FOREIGN KEY (NguoiDuyet) REFERENCES NhanVien(MaNhanVien)
 );
 
@@ -257,7 +259,7 @@ CREATE TABLE HoSoCongTac (
     MucDich NVARCHAR(500),
     ChiPhiDuKien DECIMAL(18,2),
     TrangThaiDuyet NVARCHAR(50),
-    FOREIGN KEY (MaNhanVien) REFERENCES NhanVien(MaNhanVien)
+    FOREIGN KEY (MaNhanVien) REFERENCES NhanVien(MaNhanVien) ON DELETE CASCADE
 );
 
 -- ⭐ [BẢNG MỚI THÊM VÀO] ⭐ (Quản lý thiết bị/tài sản công ty cấp)
@@ -268,7 +270,7 @@ CREATE TABLE TaiSanCapPhat (
     SoSeri VARCHAR(100),
     NgayCapPhat DATE,
     TinhTrang NVARCHAR(100), 
-    FOREIGN KEY (MaNhanVien) REFERENCES NhanVien(MaNhanVien)
+    FOREIGN KEY (MaNhanVien) REFERENCES NhanVien(MaNhanVien) ON DELETE CASCADE
 );
 
 -- =====================================================================
@@ -282,7 +284,7 @@ CREATE TABLE QuyetDinhNghiViec (
     LyDoNghi NVARCHAR(500),
     TrangThaiBanGiao NVARCHAR(50), 
     NguoiDuyet VARCHAR(20),
-    FOREIGN KEY (MaNhanVien) REFERENCES NhanVien(MaNhanVien)
+    FOREIGN KEY (MaNhanVien) REFERENCES NhanVien(MaNhanVien) ON DELETE CASCADE
 );
 
 -- ⭐ [BẢNG MỚI THÊM VÀO] ⭐ (Chi tiết bàn giao khi nghỉ việc)
@@ -293,7 +295,7 @@ CREATE TABLE ChiTietBanGiao (
     NguoiNhanBanGiao VARCHAR(20), 
     TrangThai NVARCHAR(50), 
     GhiChu NVARCHAR(255),
-    FOREIGN KEY (MaQuyetDinh) REFERENCES QuyetDinhNghiViec(MaQuyetDinh),
+    FOREIGN KEY (MaQuyetDinh) REFERENCES QuyetDinhNghiViec(MaQuyetDinh) ON DELETE CASCADE,
     FOREIGN KEY (NguoiNhanBanGiao) REFERENCES NhanVien(MaNhanVien)
 );
 
@@ -312,7 +314,7 @@ CREATE TABLE TaiKhoan (
     MatKhau VARCHAR(255) NOT NULL, 
     MaNhomQuyen VARCHAR(20),
     TrangThaiHoatDong BIT DEFAULT 1, 
-    FOREIGN KEY (MaNhanVien) REFERENCES NhanVien(MaNhanVien),
+    FOREIGN KEY (MaNhanVien) REFERENCES NhanVien(MaNhanVien) ON DELETE CASCADE,
     FOREIGN KEY (MaNhomQuyen) REFERENCES NhomQuyen(MaNhomQuyen)
 );
 
@@ -324,7 +326,7 @@ CREATE TABLE NhatKyHoatDong (
     HanhDong NVARCHAR(100), 
     ChiTiet NVARCHAR(MAX),  
     IPAddress VARCHAR(50),
-    FOREIGN KEY (TenDangNhap) REFERENCES TaiKhoan(TenDangNhap)
+    FOREIGN KEY (TenDangNhap) REFERENCES TaiKhoan(TenDangNhap) ON DELETE CASCADE
 );
 
 -- =====================================================================
