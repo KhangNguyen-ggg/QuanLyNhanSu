@@ -251,5 +251,10 @@ namespace QLNS
                 throw;
             }
         }
+
+        private void btnHienThi_Click(object sender, EventArgs e)
+        {
+            LoadNhanVien();
+        }
     }
 }

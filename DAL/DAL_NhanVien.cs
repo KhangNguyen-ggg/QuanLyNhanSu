@@ -11,50 +11,34 @@ namespace DAL
 
     public class DAL_NhanVien
     {
-        //QuanLyNhanSuDataContext db = new QuanLyNhanSuDataContext();
 
         //lấy ds
-        public List<ET_NhanVienView> LayDanhSachLenGrid()
+        public IQueryable<ET_NhanVienView> LayDanhSachLenGrid()
         {
-            // Dùng using để đảm bảo dữ liệu luôn được lấy mới nhất từ SQL
-            using (QuanLyNhanSuDataContext db = new QuanLyNhanSuDataContext())
-            {
-                var ds = from nv in db.NhanViens
-                         join pb in db.PhongBans on nv.MaPhongBan equals pb.MaPhongBan into pbGroup
-                         from pb in pbGroup.DefaultIfEmpty()
-                         select new ET_NhanVienView
-                         {
-                             MaNhanVien = nv.MaNhanVien,
-                             HoTen = nv.HoTen,
-                             TenPhongBan = pb.TenPhongBan,
-                             TrangThaiLamViec = nv.TrangThaiLamViec
-                         };
+            QuanLyNhanSuDataContext db = new QuanLyNhanSuDataContext();
+            var query = from nv in db.NhanViens
 
-                return ds.ToList();
-            }
+                        join pb in db.PhongBans on nv.MaPhongBan equals pb.MaPhongBan into pbGroup
+                        from pb in pbGroup.DefaultIfEmpty()
+
+                        join cd in db.ChucDanhs on nv.MaChucDanh equals cd.MaChucDanh into cdGroup
+                        from cd in cdGroup.DefaultIfEmpty()
+                        select new ET_NhanVienView
+                        {
+                            MaNhanVien = nv.MaNhanVien,
+                            HoTen = nv.HoTen,
+                            ChucDanh = cd.TenChucDanh,
+                            TrangThaiLamViec = nv.TrangThaiLamViec,
+                            TenPhongBan = pb != null ? pb.TenPhongBan : "Không có phòng ban"
+                        };
+            return query;
         }
 
         // Lấy thông tin cơ bản 
-        public ET_NhanVien LayThongTinCoBan(string maNV)
+        public IQueryable<NhanVien> LayThongTinCoBan()
         {
-            using (QuanLyNhanSuDataContext db = new QuanLyNhanSuDataContext())
-            {
-                var nv = db.NhanViens.FirstOrDefault(n => n.MaNhanVien == maNV);
-                if (nv != null)
-                {
-                    // Dùng constructor của ET_NhanVien bạn đã tạo
-                    return new ET_NhanVien(
-                        nv.MaNhanVien,
-                        nv.HoTen,
-                        nv.GioiTinh,
-                        nv.NgaySinh.GetValueOrDefault(),
-                        nv.MaPhongBan,
-                        nv.MaChucDanh,
-                        nv.TrangThaiLamViec
-                    );
-                }
-                return null;
-            }
+            QuanLyNhanSuDataContext db = new QuanLyNhanSuDataContext();
+            return db.NhanViens;
         }
 
 
@@ -67,7 +51,10 @@ namespace DAL
                 var query = from nv in db.NhanViens
                             join pb in db.PhongBans on nv.MaPhongBan equals pb.MaPhongBan into pbGroup
                             from pb in pbGroup.DefaultIfEmpty()
-                            select new { nv, pb };
+
+                            join cd in db.ChucDanhs on nv.MaChucDanh equals cd.MaChucDanh into cdGroup
+                            from cd in cdGroup.DefaultIfEmpty()//sử dụng DefaultIfEmpty để tránh lỗi khi không có phòng ban hoặc chức danh tương ứng
+                            select new { nv, pb, cd };
 
                 if (isTimTheoPB && !string.IsNullOrEmpty(maPhongBan))
                 {
@@ -80,11 +67,14 @@ namespace DAL
                     query = query.Where(x => x.nv.MaNhanVien.Contains(tuKhoa) || x.nv.HoTen.Contains(tuKhoa));
                 }
 
+
                 var result = query.Select(x => new ET_NhanVienView
                 {
                     MaNhanVien = x.nv.MaNhanVien,
                     HoTen = x.nv.HoTen,
-                    TenPhongBan = x.pb.TenPhongBan,
+                    TenPhongBan = x.pb != null ? x.pb.TenPhongBan : "Không có phòng ban",
+                    // Khắc phục lỗi: Lấy trực tiếp tên hiển thị thay vì mã danh mục
+                    ChucDanh = x.cd != null ? x.cd.TenChucDanh : "Chưa có chức danh",
                     TrangThaiLamViec = x.nv.TrangThaiLamViec
                 }).ToList();
 
@@ -92,14 +82,14 @@ namespace DAL
             }
         }
 
-        //thêm
         public bool ThemNhanVien(ET_NhanVien nv)
         {
             try
             {
                 using (QuanLyNhanSuDataContext db = new QuanLyNhanSuDataContext())
                 {
-                    NhanVien NhanVien = new NhanVien
+                    // Chuyển đổi gói dữ liệu ET thuần thành Entity được DB quản lý
+                    NhanVien newNV = new NhanVien
                     {
                         MaNhanVien = nv.MaNhanVien,
                         HoTen = nv.HoTen,
@@ -110,7 +100,7 @@ namespace DAL
                         TrangThaiLamViec = nv.TrangThaiLamViec
                     };
 
-                    db.NhanViens.InsertOnSubmit(NhanVien);
+                    db.NhanViens.InsertOnSubmit(newNV);
                     db.SubmitChanges();
                     return true;
                 }
@@ -120,43 +110,59 @@ namespace DAL
                 return false;
             }
         }
+
         //xóa
         public bool XoaNhanVien(string maNV)
         {
-            using (QuanLyNhanSuDataContext db = new QuanLyNhanSuDataContext())
+            try
             {
-                var nv = db.NhanViens.FirstOrDefault(n => n.MaNhanVien == maNV);
-                if (nv != null)
+                using (QuanLyNhanSuDataContext db = new QuanLyNhanSuDataContext())
                 {
-                    db.NhanViens.DeleteOnSubmit(nv);
-                    db.SubmitChanges();
-                    return true;
+                    var nv = db.NhanViens.FirstOrDefault(n => n.MaNhanVien == maNV);
+                    if (nv != null)
+                    {
+                        db.NhanViens.DeleteOnSubmit(nv);
+                        db.SubmitChanges();
+                        return true;
+                    }
+                    return false;
                 }
+            }
+            catch
+            {
                 return false;
             }
         }
-        //sửa
+
+        // 4. HÀM CẬP NHẬT THÔNG TIN NHÂN VIÊN (Đã loại bỏ lệnh sửa Khóa chính)
         public bool SuaNhanVien(ET_NhanVien nv)
         {
-            using (QuanLyNhanSuDataContext db = new QuanLyNhanSuDataContext())
+            try
             {
-                var existingNV = db.NhanViens.FirstOrDefault(n => n.MaNhanVien == nv.MaNhanVien);
-                if (existingNV != null)
+                using (QuanLyNhanSuDataContext db = new QuanLyNhanSuDataContext())
                 {
-                    existingNV.MaNhanVien = nv.MaNhanVien;
-                    existingNV.HoTen = nv.HoTen;
-                    existingNV.GioiTinh = nv.GioiTinh;
-                    existingNV.NgaySinh = nv.NgaySinh;
-                    existingNV.MaPhongBan = nv.MaPhongBan;
-                    existingNV.MaChucDanh = nv.MaChucDanh;
-                    existingNV.TrangThaiLamViec = nv.TrangThaiLamViec;
-                    db.SubmitChanges();
-                    return true;
+                    // Truy vấn thực thể đang tồn tại trong DB theo khóa chính
+                    var existingNV = db.NhanViens.FirstOrDefault(n => n.MaNhanVien == nv.MaNhanVien);
+                    if (existingNV != null)
+                    {
+                        // ĐÃ XÓA dòng sửa khóa chính existingNV.MaNhanVien để tránh lỗi crash hệ thống
+                        existingNV.HoTen = nv.HoTen;
+                        existingNV.GioiTinh = nv.GioiTinh;
+                        existingNV.NgaySinh = nv.NgaySinh;
+                        existingNV.MaPhongBan = nv.MaPhongBan;
+                        existingNV.MaChucDanh = nv.MaChucDanh;
+                        existingNV.TrangThaiLamViec = nv.TrangThaiLamViec;
+
+                        db.SubmitChanges();
+                        return true;
+                    }
+                    return false;
                 }
+            }
+            catch
+            {
                 return false;
             }
         }
-
-
     }
 }

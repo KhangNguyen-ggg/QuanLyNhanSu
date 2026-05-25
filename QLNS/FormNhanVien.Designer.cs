@@ -28,6 +28,7 @@
             this.btnSua = new Guna.UI2.WinForms.Guna2Button();
             this.btnXoa = new Guna.UI2.WinForms.Guna2Button();
             this.btnThem = new Guna.UI2.WinForms.Guna2Button();
+            this.picAvatar = new Guna.UI2.WinForms.Guna2PictureBox();
             this.btnChonAnh = new Guna.UI2.WinForms.Guna2Button();
             this.btnLuu = new Guna.UI2.WinForms.Guna2Button();
             this.lblMaNV = new System.Windows.Forms.Label();
@@ -73,16 +74,16 @@
             this.btnTimKiem = new Guna.UI2.WinForms.Guna2Button();
             this.dgvNhanVien1 = new Guna.UI2.WinForms.Guna2DataGridView();
             this.tabPageXuatDS = new System.Windows.Forms.TabPage();
-            this.picAvatar = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.btnHienThi = new Guna.UI2.WinForms.Guna2Button();
             this.tabMain.SuspendLayout();
             this.pageNhanVien.SuspendLayout();
             this.pnlRight.SuspendLayout();
             this.tabRight.SuspendLayout();
             this.pageChiTiet.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picAvatar)).BeginInit();
             this.gbChiTiet.SuspendLayout();
             this.pnlLeft.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNhanVien1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picAvatar)).BeginInit();
             this.SuspendLayout();
             // 
             // tabMain
@@ -250,6 +251,18 @@
             this.btnThem.TabIndex = 16;
             this.btnThem.Text = "Thêm";
             this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
+            // 
+            // picAvatar
+            // 
+            this.picAvatar.BorderRadius = 4;
+            this.picAvatar.Image = global::QLNS.Properties.Resources.ConNguoi;
+            this.picAvatar.ImageRotate = 0F;
+            this.picAvatar.Location = new System.Drawing.Point(20, 15);
+            this.picAvatar.Name = "picAvatar";
+            this.picAvatar.Size = new System.Drawing.Size(120, 150);
+            this.picAvatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.picAvatar.TabIndex = 0;
+            this.picAvatar.TabStop = false;
             // 
             // btnChonAnh
             // 
@@ -730,6 +743,7 @@
             this.pnlLeft.Controls.Add(this.chkChonPB);
             this.pnlLeft.Controls.Add(this.lblTimKiem);
             this.pnlLeft.Controls.Add(this.txtTimKiem);
+            this.pnlLeft.Controls.Add(this.btnHienThi);
             this.pnlLeft.Controls.Add(this.btnTimKiem);
             this.pnlLeft.Controls.Add(this.dgvNhanVien1);
             this.pnlLeft.Dock = System.Windows.Forms.DockStyle.Left;
@@ -815,6 +829,8 @@
             // 
             // dgvNhanVien1
             // 
+            this.dgvNhanVien1.AllowUserToAddRows = false;
+            this.dgvNhanVien1.AllowUserToDeleteRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
             this.dgvNhanVien1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvNhanVien1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -839,6 +855,7 @@
             this.dgvNhanVien1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvNhanVien1.Location = new System.Drawing.Point(10, 100);
             this.dgvNhanVien1.Name = "dgvNhanVien1";
+            this.dgvNhanVien1.ReadOnly = true;
             this.dgvNhanVien1.RowHeadersVisible = false;
             this.dgvNhanVien1.RowHeadersWidth = 51;
             this.dgvNhanVien1.Size = new System.Drawing.Size(451, 1252);
@@ -856,7 +873,7 @@
             this.dgvNhanVien1.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
             this.dgvNhanVien1.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvNhanVien1.ThemeStyle.HeaderStyle.Height = 29;
-            this.dgvNhanVien1.ThemeStyle.ReadOnly = false;
+            this.dgvNhanVien1.ThemeStyle.ReadOnly = true;
             this.dgvNhanVien1.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
             this.dgvNhanVien1.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvNhanVien1.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -875,17 +892,18 @@
             this.tabPageXuatDS.TabIndex = 1;
             this.tabPageXuatDS.Text = "Xuất DSNV";
             // 
-            // picAvatar
+            // btnHienThi
             // 
-            this.picAvatar.BorderRadius = 4;
-            this.picAvatar.Image = global::QLNS.Properties.Resources.ConNguoi;
-            this.picAvatar.ImageRotate = 0F;
-            this.picAvatar.Location = new System.Drawing.Point(20, 15);
-            this.picAvatar.Name = "picAvatar";
-            this.picAvatar.Size = new System.Drawing.Size(120, 150);
-            this.picAvatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.picAvatar.TabIndex = 0;
-            this.picAvatar.TabStop = false;
+            this.btnHienThi.BorderRadius = 4;
+            this.btnHienThi.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.btnHienThi.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnHienThi.ForeColor = System.Drawing.Color.White;
+            this.btnHienThi.Location = new System.Drawing.Point(316, 55);
+            this.btnHienThi.Name = "btnHienThi";
+            this.btnHienThi.Size = new System.Drawing.Size(95, 30);
+            this.btnHienThi.TabIndex = 5;
+            this.btnHienThi.Text = "Load NV";
+            this.btnHienThi.Click += new System.EventHandler(this.btnHienThi_Click);
             // 
             // FormNhanVien
             // 
@@ -900,11 +918,11 @@
             this.pnlRight.ResumeLayout(false);
             this.tabRight.ResumeLayout(false);
             this.pageChiTiet.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.picAvatar)).EndInit();
             this.gbChiTiet.ResumeLayout(false);
             this.pnlLeft.ResumeLayout(false);
             this.pnlLeft.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNhanVien1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picAvatar)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -968,5 +986,6 @@
         private Guna.UI2.WinForms.Guna2Button btnThem;
         private Guna.UI2.WinForms.Guna2Button btnSua;
         private Guna.UI2.WinForms.Guna2Button btnXoa;
+        private Guna.UI2.WinForms.Guna2Button btnHienThi;
     }
 }

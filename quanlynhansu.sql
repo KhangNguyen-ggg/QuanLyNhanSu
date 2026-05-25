@@ -336,3 +336,26 @@ ALTER TABLE PhongBan
 ADD CONSTRAINT FK_PhongBan_TruongPhong 
 FOREIGN KEY (MaTruongPhong) REFERENCES NhanVien(MaNhanVien);
 GO
+
+-- 1. Thêm Chi nhánh (Cần thiết cho Phòng ban)
+INSERT INTO ChiNhanh (MaChiNhanh, TenChiNhanh) 
+VALUES ('CN_HQ', N'Trụ sở chính');
+
+-- 2. Thêm Phòng ban (Cần thiết cho Nhân viên)
+INSERT INTO PhongBan (MaPhongBan, MaChiNhanh, TenPhongBan) 
+VALUES ('PB_IT', 'CN_HQ', N'Phòng Công Nghệ Thông Tin');
+
+-- 3. Thêm Chức danh (Cần thiết cho Nhân viên)
+INSERT INTO ChucDanh (MaChucDanh, TenChucDanh, CapBac) 
+VALUES ('CD_ADMIN', N'Quản trị viên', N'Quản lý');
+
+-- 4. Thêm Nhân viên Admin (Để liên kết với Tài khoản)
+INSERT INTO NhanVien (MaNhanVien, HoTen, MaPhongBan, MaChucDanh) 
+VALUES ('NV_ADMIN', N'Quản Trị Viên Hệ Thống', 'PB_IT', 'CD_ADMIN');
+
+-- 5. Thêm Nhóm quyền Admin
+INSERT INTO NhomQuyen (MaNhomQuyen, TenNhomQuyen, MoTa) 
+VALUES ('NQ_ADMIN', N'Administrator', N'Toàn quyền hệ thống');
+-- 6. Tạo Tài khoản Admin
+INSERT INTO TaiKhoan (TenDangNhap, MaNhanVien, MatKhau, MaNhomQuyen, TrangThaiHoatDong) 
+VALUES ('admin', 'NV_ADMIN', '123456', 'NQ_ADMIN', 1);

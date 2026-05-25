@@ -21,13 +21,16 @@ namespace QLNS
 
         BUS_NhanVien busNV = new BUS_NhanVien();
         BUS_ChiTietNhanVien busCT = new BUS_ChiTietNhanVien();
+        BUS_PhongBan busPhongBan = new BUS_PhongBan();
+        BUS_ChucDanh busChucDanh = new BUS_ChucDanh();
         ET_NhanVien etNhanVien = new ET_NhanVien();
         ET_ChiTietNV etChiTiet = new ET_ChiTietNV();
 
 
         private void ThemNhanVien_Load(object sender, EventArgs e)
         {
-
+            LoadCboPhongBan();
+            LoadCboChucDanh();
         }
 
         private void btnLuu_Click(object sender, EventArgs e)
@@ -41,24 +44,44 @@ namespace QLNS
                     MessageBox.Show("Thêm nhân viên thành công!");
                 }
             }
+
+
         }
 
         private void btnHuy_Click(object sender, EventArgs e)
         {
-            //nhân viên
-            txtMaNhanVien.Text = "";
-            txtHoTen.Text = "";
-            dtpNgaySinh.Value = DateTime.Now;
-            cboPhongBan.SelectedIndex = -1; 
-            cboChucDanh.SelectedIndex = -1;
-            cboGioiTinh.SelectedIndex = -1;
+            ////nhân viên
+            //txtMaNhanVien.Text = "";
+            //txtHoTen.Text = "";
+            //dtpNgaySinh.Value = DateTime.Now;
+            //cboPhongBan.SelectedIndex = -1; 
+            //cboChucDanh.SelectedIndex = -1;
+            //cboGioiTinh.SelectedIndex = -1;
 
-            //chi tiết 
-            txtSDT.Text = "";
-            txtCCCD.Text = "";
-            txtEmailCN.Text = "";
-            txtEmailCT.Text = "";   
+            ////chi tiết 
+            //txtSDT.Text = "";
+            //txtCCCD.Text = "";
+            //txtEmailCN.Text = "";
+            //txtEmailCT.Text = "";   
+            //txtDiaChi.Text = "";
+            //txtMST.Text = "";
+            //txtNganHang.Text = "";
+            //txtSTK.Text = "";
+            this.Close();
 
+        }
+        //load cbo
+        public void LoadCboPhongBan()
+        {
+            cboPhongBan.DataSource = busPhongBan.LayDanhSachPhongBan();
+            cboPhongBan.DisplayMember = "TenPhongBan";
+            cboPhongBan.ValueMember = "MaPhongBan";
+        }
+        public void LoadCboChucDanh()
+        {
+            cboChucDanh.DataSource = busChucDanh.LayDanhSachChucDanh();
+            cboChucDanh.DisplayMember = "TenChucDanh";
+            cboChucDanh.ValueMember = "MaChucDanh";
         }
     }
 }

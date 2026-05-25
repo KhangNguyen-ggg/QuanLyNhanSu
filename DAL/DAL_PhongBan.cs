@@ -10,16 +10,13 @@ namespace DAL
     public class DAL_PhongBan
     {
 
-        public List<ET_PhongBan> LayDanhSachPhongBan()
+        public IQueryable<PhongBan> LayDanhSachPhongBan()
         {
-            using (QuanLyNhanSuDataContext db = new QuanLyNhanSuDataContext())
-            {
-                return db.PhongBans.Select(pb => new ET_PhongBan
-                {
-                    MaPhongBan = pb.MaPhongBan,
-                    TenPhongBan = pb.TenPhongBan
-                }).ToList();
-            }
+            QuanLyNhanSuDataContext db = new QuanLyNhanSuDataContext();
+            var query = from pb in db.PhongBans
+                        select pb;
+            return query;
         }
+
     }
 }

@@ -12,6 +12,7 @@ namespace ET
         public string MaNhanVien { get; set; }
         public string HoTen { get; set; }
         public string TenPhongBan { get; set; } 
+        public string ChucDanh { get; set; }    
         public string TrangThaiLamViec { get; set; }
     }
 }
