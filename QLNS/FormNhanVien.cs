@@ -62,7 +62,7 @@ namespace QLNS
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
-            string maNV = txtMaNhanVien2.Text.Trim();
+            string maNV = txtMaNhanVien.Text.Trim();
             if (string.IsNullOrEmpty(maNV))
             {
                 MessageBox.Show("Vui lòng chọn nhân viên từ bảng trước khi lưu ảnh!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -142,7 +142,7 @@ namespace QLNS
                 var nvCoBan = busNhanVien.LayThongTinCoBan(maNV);
                 if (nvCoBan != null)
                 {
-                    txtMaNhanVien2.Text = nvCoBan.MaNhanVien;
+                    txtMaNhanVien.Text = nvCoBan.MaNhanVien;
                     txtHoTen.Text = nvCoBan.HoTen;
                     txtGioiTinh.Text = nvCoBan.GioiTinh;
                     txtPhongBan.Text = nvCoBan.MaPhongBan;
@@ -274,6 +274,22 @@ namespace QLNS
             {
                 MessageBox.Show("Vui lòng chọn 1 nhân viên để sửa!");
             }
+        }
+
+        private void btnHuyBaoHiem_Click(object sender, EventArgs e)
+        {
+            //chuyển sang page chi tiết
+            tabRight.SelectedTab = pageChiTiet;
+        }
+
+        private void btnLuuBaoHiem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void LoadTabBaoHiem()
+        {
+
         }
     }
 }
