@@ -33,6 +33,10 @@ namespace BUS
         {
             return dAL_ChiTietNhanVien.ThemChiTiet(ct);
         }
-
+        // Sửa
+        public bool SuaChiTietNhanVien(ET_ChiTietNV ct)
+        {
+            return dAL_ChiTietNhanVien.SuaChiTiet(ct);
+        }
     }
 }

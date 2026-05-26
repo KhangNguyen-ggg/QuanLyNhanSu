@@ -15,6 +15,7 @@ namespace QLNS
         private BUS_NhanVien busNhanVien = new BUS_NhanVien();
         private BUS_ChiTietNhanVien busChiTietNhanVien = new BUS_ChiTietNhanVien();
         private BUS_PhongBan busPhongBan = new BUS_PhongBan();
+        private BUS_ChucDanh busChucDanh = new BUS_ChucDanh();  
 
         public FormNhanVien()
         {
@@ -255,6 +256,24 @@ namespace QLNS
         private void btnHienThi_Click(object sender, EventArgs e)
         {
             LoadNhanVien();
+        }
+
+        private void btnSua_Click(object sender, EventArgs e)
+        {
+            if (dgvNhanVien1.CurrentRow != null)
+            {
+                string maNV = dgvNhanVien1.CurrentRow.Cells["MaNhanVien"].Value.ToString();
+
+                // Gọi Form Sửa và truyền mã vào
+                FormSuaNhanVien frmSua = new FormSuaNhanVien(maNV);
+                frmSua.ShowDialog();
+
+                LoadNhanVien();
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng chọn 1 nhân viên để sửa!");
+            }
         }
     }
 }

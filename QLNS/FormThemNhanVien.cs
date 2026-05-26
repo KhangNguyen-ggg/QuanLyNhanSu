@@ -23,6 +23,8 @@ namespace QLNS
         BUS_ChiTietNhanVien busCT = new BUS_ChiTietNhanVien();
         BUS_PhongBan busPhongBan = new BUS_PhongBan();
         BUS_ChucDanh busChucDanh = new BUS_ChucDanh();
+
+
         ET_NhanVien etNhanVien = new ET_NhanVien();
         ET_ChiTietNV etChiTiet = new ET_ChiTietNV();
 
@@ -35,17 +37,56 @@ namespace QLNS
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
-            // (Ví dụ logic gọi trên Form)
-            if (busNV.ThemNhanVien(etNhanVien)) // Lưu bảng NhanVien trước
+            // 1. Kiểm tra dữ liệu bắt buộc (Tránh lỗi vặt khi người dùng để trống)
+            if (string.IsNullOrWhiteSpace(txtMaNhanVien.Text) || string.IsNullOrWhiteSpace(txtHoTen.Text))
             {
-                // Nếu bảng cha lưu thành công, lưu tiếp bảng con
-                if (busCT.ThemChiTietNhanVien(etChiTiet))
-                {
-                    MessageBox.Show("Thêm nhân viên thành công!");
-                }
+                MessageBox.Show("Vui lòng nhập Mã nhân viên và Họ tên!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtMaNhanVien.Focus();
+                return;
             }
 
+            // 2. Gom dữ liệu Hành chính vào đối tượng ET_NhanVien
+            
+            etNhanVien.MaNhanVien = txtMaNhanVien.Text.Trim();
+            etNhanVien.HoTen = txtHoTen.Text.Trim();
+            etNhanVien.GioiTinh = cboGioiTinh.Text;
+            etNhanVien.NgaySinh = dtpNgaySinh.Value;
+            etNhanVien.MaPhongBan = cboPhongBan.SelectedValue?.ToString();
+            etNhanVien.MaChucDanh = cboChucDanh.SelectedValue?.ToString();
+            etNhanVien.TrangThaiLamViec = "Đang làm việc"; // Giá trị mặc định khi mới vào công ty
 
+            // 3. Gom dữ liệu Hồ sơ vào đối tượng ET_ChiTietNV
+            etChiTiet.MaNhanVien = txtMaNhanVien.Text.Trim(); // Bắt buộc phải giống mã NV ở trên để kết nối 2 bảng
+            etChiTiet.SoDienThoai = txtSDT.Text.Trim();
+            etChiTiet.SoCCCD = txtCCCD.Text.Trim();
+            etChiTiet.EmailCaNhan = txtEmailCN.Text.Trim();
+            etChiTiet.EmailCongTy = txtEmailCT.Text.Trim();
+            etChiTiet.DiaChiThuongTru = txtDiaChi.Text.Trim();
+            etChiTiet.MaSoThue = txtMST.Text.Trim();
+            etChiTiet.TenNganHang = txtNganHang.Text.Trim();
+            etChiTiet.SoTaiKhoan = txtSTK.Text.Trim();
+
+            // (Nếu trên form có thêm 2 ô Ngày cấp, Nơi cấp CCCD thì bạn gán luôn ở đây)
+            // etChiTiet.NgayCapCCCD = dtpNgayCapCCCD.Value;
+            // etChiTiet.NoiCapCCCD = txtNoiCapCCCD.Text.Trim();
+
+            // 4. Đẩy xuống tầng BUS xử lý theo đúng quy trình 2 bước
+            if (busNV.ThemNhanVien(etNhanVien)) // Lưu bảng NhanVien trước
+            {
+                if (busCT.ThemChiTietNhanVien(etChiTiet)) // Nếu bảng cha lưu thành công, lưu tiếp bảng con
+                {
+                    MessageBox.Show("Thêm nhân viên mới thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.Close(); // Đóng form lại sau khi thêm xong
+                }
+                else
+                {
+                    MessageBox.Show("Thêm nhân viên thành công nhưng LƯU CHI TIẾT THẤT BẠI!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Thêm nhân viên thất bại! Có thể Mã nhân viên đã tồn tại.", "Lỗi hệ thống", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void btnHuy_Click(object sender, EventArgs e)
