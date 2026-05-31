@@ -40,7 +40,6 @@
             this.lblPhongBan2 = new System.Windows.Forms.Label();
             this.txtPhongBan = new Guna.UI2.WinForms.Guna2TextBox();
             this.lblChucDanh = new System.Windows.Forms.Label();
-            this.txtChucDanh = new Guna.UI2.WinForms.Guna2TextBox();
             this.lblNgaySinh = new System.Windows.Forms.Label();
             this.dtpNgaySinh = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.gbChiTiet = new Guna.UI2.WinForms.Guna2GroupBox();
@@ -68,7 +67,9 @@
             this.btnLuuBaoHiem = new Guna.UI2.WinForms.Guna2Button();
             this.btnHuyBaoHiem = new Guna.UI2.WinForms.Guna2Button();
             this.gbBaoHiem = new Guna.UI2.WinForms.Guna2GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.lblSoSoBHXH = new System.Windows.Forms.Label();
+            this.txtMaNhanVien2 = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtSoSoBHXH = new Guna.UI2.WinForms.Guna2TextBox();
             this.lblNgayThamGia = new System.Windows.Forms.Label();
             this.dtpNgayThamGia = new Guna.UI2.WinForms.Guna2DateTimePicker();
@@ -80,6 +81,8 @@
             this.cboTrangThaiBH = new Guna.UI2.WinForms.Guna2ComboBox();
             this.pnlTieuDeBaoHiem = new Guna.UI2.WinForms.Guna2Panel();
             this.lblTitle = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
             this.pnlLeft = new Guna.UI2.WinForms.Guna2Panel();
             this.lblPhongBan = new System.Windows.Forms.Label();
             this.cboPhongBan = new Guna.UI2.WinForms.Guna2ComboBox();
@@ -91,10 +94,7 @@
             this.dgvNhanVien1 = new Guna.UI2.WinForms.Guna2DataGridView();
             this.tabPageXuatDS = new System.Windows.Forms.TabPage();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.txtMaNhanVien2 = new Guna.UI2.WinForms.Guna2TextBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.cboChucDanh = new Guna.UI2.WinForms.Guna2ComboBox();
             this.tabMain.SuspendLayout();
             this.pageNhanVien.SuspendLayout();
             this.pnlRight.SuspendLayout();
@@ -197,6 +197,7 @@
             this.pageChiTiet.AutoScroll = true;
             this.pageChiTiet.BackColor = System.Drawing.Color.White;
             this.pageChiTiet.Controls.Add(this.btnSua);
+            this.pageChiTiet.Controls.Add(this.cboChucDanh);
             this.pageChiTiet.Controls.Add(this.btnXoa);
             this.pageChiTiet.Controls.Add(this.btnThem);
             this.pageChiTiet.Controls.Add(this.picAvatar);
@@ -211,7 +212,6 @@
             this.pageChiTiet.Controls.Add(this.lblPhongBan2);
             this.pageChiTiet.Controls.Add(this.txtPhongBan);
             this.pageChiTiet.Controls.Add(this.lblChucDanh);
-            this.pageChiTiet.Controls.Add(this.txtChucDanh);
             this.pageChiTiet.Controls.Add(this.lblNgaySinh);
             this.pageChiTiet.Controls.Add(this.dtpNgaySinh);
             this.pageChiTiet.Controls.Add(this.gbChiTiet);
@@ -416,20 +416,6 @@
             this.lblChucDanh.Size = new System.Drawing.Size(100, 23);
             this.lblChucDanh.TabIndex = 11;
             this.lblChucDanh.Text = "Chức danh:";
-            // 
-            // txtChucDanh
-            // 
-            this.txtChucDanh.BorderRadius = 4;
-            this.txtChucDanh.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtChucDanh.DefaultText = "";
-            this.txtChucDanh.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtChucDanh.Location = new System.Drawing.Point(279, 172);
-            this.txtChucDanh.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtChucDanh.Name = "txtChucDanh";
-            this.txtChucDanh.PlaceholderText = "";
-            this.txtChucDanh.SelectedText = "";
-            this.txtChucDanh.Size = new System.Drawing.Size(340, 30);
-            this.txtChucDanh.TabIndex = 12;
             // 
             // lblNgaySinh
             // 
@@ -815,6 +801,17 @@
             this.gbBaoHiem.TabIndex = 6;
             this.gbBaoHiem.Text = "Hồ sơ bảo hiểm nhân viên";
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.label1.ForeColor = System.Drawing.Color.Black;
+            this.label1.Location = new System.Drawing.Point(337, 220);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(97, 20);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Mã nhân viên";
+            // 
             // lblSoSoBHXH
             // 
             this.lblSoSoBHXH.AutoSize = true;
@@ -825,6 +822,20 @@
             this.lblSoSoBHXH.Size = new System.Drawing.Size(112, 20);
             this.lblSoSoBHXH.TabIndex = 0;
             this.lblSoSoBHXH.Text = "Số sổ BHXH (*):";
+            // 
+            // txtMaNhanVien2
+            // 
+            this.txtMaNhanVien2.BorderRadius = 4;
+            this.txtMaNhanVien2.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtMaNhanVien2.DefaultText = "";
+            this.txtMaNhanVien2.Font = new System.Drawing.Font("Segoe UI", 9.5F);
+            this.txtMaNhanVien2.Location = new System.Drawing.Point(333, 245);
+            this.txtMaNhanVien2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtMaNhanVien2.Name = "txtMaNhanVien2";
+            this.txtMaNhanVien2.PlaceholderText = "Nhập mã số sổ...";
+            this.txtMaNhanVien2.SelectedText = "";
+            this.txtMaNhanVien2.Size = new System.Drawing.Size(260, 36);
+            this.txtMaNhanVien2.TabIndex = 1;
             // 
             // txtSoSoBHXH
             // 
@@ -966,6 +977,26 @@
             this.lblTitle.Size = new System.Drawing.Size(384, 33);
             this.lblTitle.TabIndex = 0;
             this.lblTitle.Text = "QUẢN LÝ BẢO HIỂM XÃ HỘI & Y TẾ";
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Location = new System.Drawing.Point(4, 39);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(659, 749);
+            this.tabPage2.TabIndex = 2;
+            this.tabPage2.Text = "tabPage2";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // tabPage3
+            // 
+            this.tabPage3.Location = new System.Drawing.Point(4, 39);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage3.Size = new System.Drawing.Size(659, 749);
+            this.tabPage3.TabIndex = 3;
+            this.tabPage3.Text = "tabPage3";
+            this.tabPage3.UseVisualStyleBackColor = true;
             // 
             // pnlLeft
             // 
@@ -1149,50 +1180,20 @@
             this.tabPage1.Text = "tabPage1";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // tabPage2
+            // cboChucDanh
             // 
-            this.tabPage2.Location = new System.Drawing.Point(4, 39);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(659, 749);
-            this.tabPage2.TabIndex = 2;
-            this.tabPage2.Text = "tabPage2";
-            this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // tabPage3
-            // 
-            this.tabPage3.Location = new System.Drawing.Point(4, 39);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(659, 749);
-            this.tabPage3.TabIndex = 3;
-            this.tabPage3.Text = "tabPage3";
-            this.tabPage3.UseVisualStyleBackColor = true;
-            // 
-            // txtMaNhanVien2
-            // 
-            this.txtMaNhanVien2.BorderRadius = 4;
-            this.txtMaNhanVien2.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtMaNhanVien2.DefaultText = "";
-            this.txtMaNhanVien2.Font = new System.Drawing.Font("Segoe UI", 9.5F);
-            this.txtMaNhanVien2.Location = new System.Drawing.Point(333, 245);
-            this.txtMaNhanVien2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtMaNhanVien2.Name = "txtMaNhanVien2";
-            this.txtMaNhanVien2.PlaceholderText = "Nhập mã số sổ...";
-            this.txtMaNhanVien2.SelectedText = "";
-            this.txtMaNhanVien2.Size = new System.Drawing.Size(260, 36);
-            this.txtMaNhanVien2.TabIndex = 1;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(337, 220);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(97, 20);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Mã nhân viên";
+            this.cboChucDanh.BackColor = System.Drawing.Color.Transparent;
+            this.cboChucDanh.BorderRadius = 4;
+            this.cboChucDanh.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cboChucDanh.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboChucDanh.FocusedColor = System.Drawing.Color.Empty;
+            this.cboChucDanh.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cboChucDanh.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.cboChucDanh.ItemHeight = 24;
+            this.cboChucDanh.Location = new System.Drawing.Point(279, 171);
+            this.cboChucDanh.Name = "cboChucDanh";
+            this.cboChucDanh.Size = new System.Drawing.Size(340, 30);
+            this.cboChucDanh.TabIndex = 1;
             // 
             // FormNhanVien
             // 
@@ -1257,7 +1258,6 @@
         private Guna.UI2.WinForms.Guna2TextBox txtHoTen;
         private Guna.UI2.WinForms.Guna2TextBox txtGioiTinh;
         private Guna.UI2.WinForms.Guna2TextBox txtPhongBan;
-        private Guna.UI2.WinForms.Guna2TextBox txtChucDanh;
         private Guna.UI2.WinForms.Guna2TextBox txtSoDienThoai;
         private Guna.UI2.WinForms.Guna2TextBox txtDiaChi;
         private Guna.UI2.WinForms.Guna2TextBox txtEmailCaNhan;
@@ -1301,5 +1301,6 @@
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.Label label1;
         private Guna.UI2.WinForms.Guna2TextBox txtMaNhanVien2;
+        private Guna.UI2.WinForms.Guna2ComboBox cboChucDanh;
     }
 }

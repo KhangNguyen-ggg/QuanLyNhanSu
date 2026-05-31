@@ -43,7 +43,7 @@ namespace DAL
 
 
 
-        //tìm
+        //tìm tổ hợp
         public List<ET_NhanVienView> TimKiemNhanVien(string tuKhoa, string maPhongBan, bool isTimTheoPB)
         {
             using (QuanLyNhanSuDataContext db = new QuanLyNhanSuDataContext())

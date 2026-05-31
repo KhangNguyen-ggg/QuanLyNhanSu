@@ -20,5 +20,9 @@ namespace BUS
                 TenChucDanh = cd.TenChucDanh
             }).ToList();
         }
+
+        
     }
 }
+
+
