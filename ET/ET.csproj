@@ -45,6 +45,7 @@
     <Compile Include="ET_ChamCong.cs" />
     <Compile Include="ET_ChiTietNV.cs" />
     <Compile Include="ET_ChucDanh.cs" />
+    <Compile Include="ET_GiamTruGiaCanh.cs" />
     <Compile Include="ET_NhanVien.cs" />
     <Compile Include="ET_NhanVienView.cs" />
     <Compile Include="ET_NhomQuyen.cs" />

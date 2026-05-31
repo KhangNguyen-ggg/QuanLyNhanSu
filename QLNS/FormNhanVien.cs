@@ -31,7 +31,6 @@ namespace QLNS
             LoadComboBoxTrangThaiBH();
             LoadNhanVien();
             LoadComboBoxChucDanh();
-            txtMaNhanVien2.Text = currentMaNV; 
 
         }
 
@@ -346,6 +345,7 @@ namespace QLNS
                     txtNoiDK.Text = baoHiemInfo.NoiDangKyKhamBenh;
                     txtMucDong.Text = baoHiemInfo.MucDong?.ToString("N0") ?? ""; // Format hiển thị số tiền có dấu phẩy
                     cboTrangThaiBH.Text = baoHiemInfo.TrangThai;
+
                 }
                 else
                 {
