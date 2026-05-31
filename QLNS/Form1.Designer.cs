@@ -1,7 +1,6 @@
-﻿
-namespace QLNS
+﻿namespace QLNS
 {
-    partial class FormNhanVien
+    partial class Form1
     {
         private System.ComponentModel.IContainer components = null;
 
@@ -18,9 +17,6 @@ namespace QLNS
 
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -44,7 +40,6 @@ namespace QLNS
             this.lblPhongBan2 = new System.Windows.Forms.Label();
             this.txtPhongBan = new Guna.UI2.WinForms.Guna2TextBox();
             this.lblChucDanh = new System.Windows.Forms.Label();
-            this.cboChucDanh = new Guna.UI2.WinForms.Guna2ComboBox();
             this.lblNgaySinh = new System.Windows.Forms.Label();
             this.dtpNgaySinh = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.gbChiTiet = new Guna.UI2.WinForms.Guna2GroupBox();
@@ -86,29 +81,7 @@ namespace QLNS
             this.cboTrangThaiBH = new Guna.UI2.WinForms.Guna2ComboBox();
             this.pnlTieuDeBaoHiem = new Guna.UI2.WinForms.Guna2Panel();
             this.lblTitle = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            // === GIẢM TRỪ GIA CẢNH ===
             this.tabGiamTruGC = new System.Windows.Forms.TabPage();
-            this.pnlTieuDeGiamTru = new Guna.UI2.WinForms.Guna2Panel();
-            this.lblTitleGiamTru = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.gbGiamTru = new Guna.UI2.WinForms.Guna2GroupBox();
-            this.lblMaNVGiamTru = new System.Windows.Forms.Label();
-            this.txtMaNVGiamTru = new Guna.UI2.WinForms.Guna2TextBox();
-            this.lblHoTenNPT = new System.Windows.Forms.Label();
-            this.txtHoTenNPT = new Guna.UI2.WinForms.Guna2TextBox();
-            this.lblQuanHe = new System.Windows.Forms.Label();
-            this.cboQuanHe = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.lblMaSoThueNPT = new System.Windows.Forms.Label();
-            this.txtMaSoThueNPT = new Guna.UI2.WinForms.Guna2TextBox();
-            this.lblNgayBatDauGT = new System.Windows.Forms.Label();
-            this.dtpNgayBatDauGT = new Guna.UI2.WinForms.Guna2DateTimePicker();
-            this.lblNgayKetThucGT = new System.Windows.Forms.Label();
-            this.dtpNgayKetThucGT = new Guna.UI2.WinForms.Guna2DateTimePicker();
-            this.btnThemGiamTru = new Guna.UI2.WinForms.Guna2Button();
-            this.btnLuuGiamTru = new Guna.UI2.WinForms.Guna2Button();
-            this.btnXoaGiamTru = new Guna.UI2.WinForms.Guna2Button();
-            this.btnHuyGiamTru = new Guna.UI2.WinForms.Guna2Button();
-            this.dgvGiamTru = new Guna.UI2.WinForms.Guna2DataGridView();
-            // === END GIẢM TRỪ ===
             this.tabTaiSan = new System.Windows.Forms.TabPage();
             this.pnlLeft = new Guna.UI2.WinForms.Guna2Panel();
             this.lblPhongBan = new System.Windows.Forms.Label();
@@ -121,6 +94,7 @@ namespace QLNS
             this.dgvNhanVien1 = new Guna.UI2.WinForms.Guna2DataGridView();
             this.tabPageXuatDS = new System.Windows.Forms.TabPage();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.cboChucDanh = new Guna.UI2.WinForms.Guna2ComboBox();
             this.tabMain.SuspendLayout();
             this.pageNhanVien.SuspendLayout();
             this.pnlRight.SuspendLayout();
@@ -131,10 +105,6 @@ namespace QLNS
             this.pageBaoHiem.SuspendLayout();
             this.gbBaoHiem.SuspendLayout();
             this.pnlTieuDeBaoHiem.SuspendLayout();
-            this.tabGiamTruGC.SuspendLayout();
-            this.pnlTieuDeGiamTru.SuspendLayout();
-            this.gbGiamTru.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvGiamTru)).BeginInit();
             this.pnlLeft.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNhanVien1)).BeginInit();
             this.SuspendLayout();
@@ -250,7 +220,6 @@ namespace QLNS
             this.pageChiTiet.Size = new System.Drawing.Size(659, 749);
             this.pageChiTiet.TabIndex = 0;
             this.pageChiTiet.Text = "Chi tiết nhân viên";
-            this.pageChiTiet.Click += new System.EventHandler(this.pageChiTiet_Click);
             // 
             // btnSua
             // 
@@ -269,7 +238,6 @@ namespace QLNS
             this.btnSua.Size = new System.Drawing.Size(144, 45);
             this.btnSua.TabIndex = 16;
             this.btnSua.Text = "Sửa";
-            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
             // btnXoa
             // 
@@ -288,7 +256,6 @@ namespace QLNS
             this.btnXoa.Size = new System.Drawing.Size(144, 45);
             this.btnXoa.TabIndex = 16;
             this.btnXoa.Text = "Xóa";
-            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // btnThem
             // 
@@ -307,7 +274,6 @@ namespace QLNS
             this.btnThem.Size = new System.Drawing.Size(144, 45);
             this.btnThem.TabIndex = 16;
             this.btnThem.Text = "Thêm";
-            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // picAvatar
             // 
@@ -331,7 +297,6 @@ namespace QLNS
             this.btnChonAnh.Size = new System.Drawing.Size(120, 30);
             this.btnChonAnh.TabIndex = 1;
             this.btnChonAnh.Text = "Chọn ảnh";
-            this.btnChonAnh.Click += new System.EventHandler(this.btnChonAnh_Click);
             // 
             // btnLuu
             // 
@@ -343,7 +308,6 @@ namespace QLNS
             this.btnLuu.Size = new System.Drawing.Size(120, 30);
             this.btnLuu.TabIndex = 2;
             this.btnLuu.Text = "Lưu hồ sơ";
-            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
             // 
             // lblMaNV
             // 
@@ -447,21 +411,6 @@ namespace QLNS
             this.lblChucDanh.TabIndex = 11;
             this.lblChucDanh.Text = "Chức danh:";
             // 
-            // cboChucDanh
-            // 
-            this.cboChucDanh.BackColor = System.Drawing.Color.Transparent;
-            this.cboChucDanh.BorderRadius = 4;
-            this.cboChucDanh.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cboChucDanh.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboChucDanh.FocusedColor = System.Drawing.Color.Empty;
-            this.cboChucDanh.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.cboChucDanh.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.cboChucDanh.ItemHeight = 24;
-            this.cboChucDanh.Location = new System.Drawing.Point(279, 171);
-            this.cboChucDanh.Name = "cboChucDanh";
-            this.cboChucDanh.Size = new System.Drawing.Size(340, 30);
-            this.cboChucDanh.TabIndex = 12;
-            // 
             // lblNgaySinh
             // 
             this.lblNgaySinh.Font = new System.Drawing.Font("Segoe UI", 9F);
@@ -484,11 +433,13 @@ namespace QLNS
             this.dtpNgaySinh.Name = "dtpNgaySinh";
             this.dtpNgaySinh.Size = new System.Drawing.Size(340, 30);
             this.dtpNgaySinh.TabIndex = 14;
-            this.dtpNgaySinh.Value = new System.DateTime(2026, 5, 22, 0, 0, 0, 0);
+            this.dtpNgaySinh.Value = new System.DateTime(2026, 5, 22, 5, 33, 55, 784);
             // 
             // gbChiTiet
             // 
-            this.gbChiTiet.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
+            this.gbChiTiet.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            | System.Windows.Forms.AnchorStyles.Left)
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.gbChiTiet.BorderRadius = 6;
             this.gbChiTiet.Controls.Add(this.lblSDT);
             this.gbChiTiet.Controls.Add(this.txtSoDienThoai);
@@ -521,6 +472,7 @@ namespace QLNS
             // 
             // lblSDT
             // 
+            this.lblSDT.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblSDT.Font = new System.Drawing.Font("Segoe UI", 8.5F);
             this.lblSDT.ForeColor = System.Drawing.Color.Black;
             this.lblSDT.Location = new System.Drawing.Point(24, 52);
@@ -531,11 +483,13 @@ namespace QLNS
             // 
             // txtSoDienThoai
             // 
+            this.txtSoDienThoai.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtSoDienThoai.BorderRadius = 4;
             this.txtSoDienThoai.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtSoDienThoai.DefaultText = "";
             this.txtSoDienThoai.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtSoDienThoai.Location = new System.Drawing.Point(135, 45);
+            this.txtSoDienThoai.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtSoDienThoai.Name = "txtSoDienThoai";
             this.txtSoDienThoai.PlaceholderText = "";
             this.txtSoDienThoai.SelectedText = "";
@@ -544,6 +498,7 @@ namespace QLNS
             // 
             // lblDiaChi
             // 
+            this.lblDiaChi.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblDiaChi.Font = new System.Drawing.Font("Segoe UI", 8.5F);
             this.lblDiaChi.ForeColor = System.Drawing.Color.Black;
             this.lblDiaChi.Location = new System.Drawing.Point(24, 92);
@@ -554,11 +509,13 @@ namespace QLNS
             // 
             // txtDiaChi
             // 
+            this.txtDiaChi.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtDiaChi.BorderRadius = 4;
             this.txtDiaChi.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtDiaChi.DefaultText = "";
             this.txtDiaChi.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtDiaChi.Location = new System.Drawing.Point(135, 85);
+            this.txtDiaChi.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtDiaChi.Name = "txtDiaChi";
             this.txtDiaChi.PlaceholderText = "";
             this.txtDiaChi.SelectedText = "";
@@ -567,6 +524,7 @@ namespace QLNS
             // 
             // lblEmailCN
             // 
+            this.lblEmailCN.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblEmailCN.Font = new System.Drawing.Font("Segoe UI", 8.5F);
             this.lblEmailCN.ForeColor = System.Drawing.Color.Black;
             this.lblEmailCN.Location = new System.Drawing.Point(24, 132);
@@ -577,11 +535,13 @@ namespace QLNS
             // 
             // txtEmailCaNhan
             // 
+            this.txtEmailCaNhan.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtEmailCaNhan.BorderRadius = 4;
             this.txtEmailCaNhan.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtEmailCaNhan.DefaultText = "";
             this.txtEmailCaNhan.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtEmailCaNhan.Location = new System.Drawing.Point(135, 125);
+            this.txtEmailCaNhan.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtEmailCaNhan.Name = "txtEmailCaNhan";
             this.txtEmailCaNhan.PlaceholderText = "";
             this.txtEmailCaNhan.SelectedText = "";
@@ -590,6 +550,7 @@ namespace QLNS
             // 
             // lblEmailCT
             // 
+            this.lblEmailCT.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblEmailCT.Font = new System.Drawing.Font("Segoe UI", 8.5F);
             this.lblEmailCT.ForeColor = System.Drawing.Color.Black;
             this.lblEmailCT.Location = new System.Drawing.Point(24, 172);
@@ -600,11 +561,13 @@ namespace QLNS
             // 
             // txtEmailCongTy
             // 
+            this.txtEmailCongTy.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtEmailCongTy.BorderRadius = 4;
             this.txtEmailCongTy.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtEmailCongTy.DefaultText = "";
             this.txtEmailCongTy.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtEmailCongTy.Location = new System.Drawing.Point(135, 165);
+            this.txtEmailCongTy.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtEmailCongTy.Name = "txtEmailCongTy";
             this.txtEmailCongTy.PlaceholderText = "";
             this.txtEmailCongTy.SelectedText = "";
@@ -613,6 +576,7 @@ namespace QLNS
             // 
             // lblMST
             // 
+            this.lblMST.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblMST.Font = new System.Drawing.Font("Segoe UI", 8.5F);
             this.lblMST.ForeColor = System.Drawing.Color.Black;
             this.lblMST.Location = new System.Drawing.Point(24, 212);
@@ -623,11 +587,13 @@ namespace QLNS
             // 
             // txtMaSoThue
             // 
+            this.txtMaSoThue.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtMaSoThue.BorderRadius = 4;
             this.txtMaSoThue.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtMaSoThue.DefaultText = "";
             this.txtMaSoThue.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtMaSoThue.Location = new System.Drawing.Point(135, 205);
+            this.txtMaSoThue.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtMaSoThue.Name = "txtMaSoThue";
             this.txtMaSoThue.PlaceholderText = "";
             this.txtMaSoThue.SelectedText = "";
@@ -636,6 +602,7 @@ namespace QLNS
             // 
             // lblTK
             // 
+            this.lblTK.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblTK.Font = new System.Drawing.Font("Segoe UI", 8.5F);
             this.lblTK.ForeColor = System.Drawing.Color.Black;
             this.lblTK.Location = new System.Drawing.Point(24, 252);
@@ -646,11 +613,13 @@ namespace QLNS
             // 
             // txtSoTK
             // 
+            this.txtSoTK.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtSoTK.BorderRadius = 4;
             this.txtSoTK.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtSoTK.DefaultText = "";
             this.txtSoTK.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtSoTK.Location = new System.Drawing.Point(135, 245);
+            this.txtSoTK.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtSoTK.Name = "txtSoTK";
             this.txtSoTK.PlaceholderText = "";
             this.txtSoTK.SelectedText = "";
@@ -659,6 +628,7 @@ namespace QLNS
             // 
             // lblCCCD
             // 
+            this.lblCCCD.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblCCCD.Font = new System.Drawing.Font("Segoe UI", 8.5F);
             this.lblCCCD.ForeColor = System.Drawing.Color.Black;
             this.lblCCCD.Location = new System.Drawing.Point(313, 132);
@@ -669,11 +639,13 @@ namespace QLNS
             // 
             // txtCCCD
             // 
+            this.txtCCCD.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtCCCD.BorderRadius = 4;
             this.txtCCCD.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtCCCD.DefaultText = "";
             this.txtCCCD.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtCCCD.Location = new System.Drawing.Point(417, 125);
+            this.txtCCCD.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtCCCD.Name = "txtCCCD";
             this.txtCCCD.PlaceholderText = "";
             this.txtCCCD.SelectedText = "";
@@ -682,6 +654,7 @@ namespace QLNS
             // 
             // lblNgayCap
             // 
+            this.lblNgayCap.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblNgayCap.Font = new System.Drawing.Font("Segoe UI", 8.5F);
             this.lblNgayCap.ForeColor = System.Drawing.Color.Black;
             this.lblNgayCap.Location = new System.Drawing.Point(313, 172);
@@ -692,6 +665,7 @@ namespace QLNS
             // 
             // dtpNgayCapCCCD
             // 
+            this.dtpNgayCapCCCD.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.dtpNgayCapCCCD.BorderRadius = 4;
             this.dtpNgayCapCCCD.BorderThickness = 1;
             this.dtpNgayCapCCCD.Checked = true;
@@ -704,10 +678,11 @@ namespace QLNS
             this.dtpNgayCapCCCD.Name = "dtpNgayCapCCCD";
             this.dtpNgayCapCCCD.Size = new System.Drawing.Size(180, 30);
             this.dtpNgayCapCCCD.TabIndex = 15;
-            this.dtpNgayCapCCCD.Value = new System.DateTime(2026, 5, 22, 0, 0, 0, 0);
+            this.dtpNgayCapCCCD.Value = new System.DateTime(2026, 5, 22, 5, 33, 55, 840);
             // 
             // lblNoiCap
             // 
+            this.lblNoiCap.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblNoiCap.Font = new System.Drawing.Font("Segoe UI", 8.5F);
             this.lblNoiCap.ForeColor = System.Drawing.Color.Black;
             this.lblNoiCap.Location = new System.Drawing.Point(313, 212);
@@ -718,11 +693,13 @@ namespace QLNS
             // 
             // txtNoiCapCCCD
             // 
+            this.txtNoiCapCCCD.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtNoiCapCCCD.BorderRadius = 4;
             this.txtNoiCapCCCD.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtNoiCapCCCD.DefaultText = "";
             this.txtNoiCapCCCD.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtNoiCapCCCD.Location = new System.Drawing.Point(418, 205);
+            this.txtNoiCapCCCD.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtNoiCapCCCD.Name = "txtNoiCapCCCD";
             this.txtNoiCapCCCD.PlaceholderText = "";
             this.txtNoiCapCCCD.SelectedText = "";
@@ -731,6 +708,7 @@ namespace QLNS
             // 
             // lblNganHang
             // 
+            this.lblNganHang.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblNganHang.Font = new System.Drawing.Font("Segoe UI", 8.5F);
             this.lblNganHang.ForeColor = System.Drawing.Color.Black;
             this.lblNganHang.Location = new System.Drawing.Point(313, 252);
@@ -741,11 +719,13 @@ namespace QLNS
             // 
             // txtTenNganHang
             // 
+            this.txtTenNganHang.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtTenNganHang.BorderRadius = 4;
             this.txtTenNganHang.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtTenNganHang.DefaultText = "";
             this.txtTenNganHang.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtTenNganHang.Location = new System.Drawing.Point(418, 245);
+            this.txtTenNganHang.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtTenNganHang.Name = "txtTenNganHang";
             this.txtTenNganHang.PlaceholderText = "";
             this.txtTenNganHang.SelectedText = "";
@@ -776,7 +756,6 @@ namespace QLNS
             this.btnLuuBaoHiem.Size = new System.Drawing.Size(144, 45);
             this.btnLuuBaoHiem.TabIndex = 4;
             this.btnLuuBaoHiem.Text = "Cập nhật BH";
-            this.btnLuuBaoHiem.Click += new System.EventHandler(this.btnLuuBaoHiem_Click);
             // 
             // btnHuyBaoHiem
             // 
@@ -789,7 +768,6 @@ namespace QLNS
             this.btnHuyBaoHiem.Size = new System.Drawing.Size(144, 45);
             this.btnHuyBaoHiem.TabIndex = 5;
             this.btnHuyBaoHiem.Text = "Hủy bỏ";
-            this.btnHuyBaoHiem.Click += new System.EventHandler(this.btnHuyBaoHiem_Click);
             // 
             // gbBaoHiem
             // 
@@ -844,6 +822,7 @@ namespace QLNS
             this.txtMaNhanVien2.DefaultText = "";
             this.txtMaNhanVien2.Font = new System.Drawing.Font("Segoe UI", 9.5F);
             this.txtMaNhanVien2.Location = new System.Drawing.Point(333, 245);
+            this.txtMaNhanVien2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtMaNhanVien2.Name = "txtMaNhanVien2";
             this.txtMaNhanVien2.PlaceholderText = "Nhập mã số sổ...";
             this.txtMaNhanVien2.SelectedText = "";
@@ -857,6 +836,7 @@ namespace QLNS
             this.txtSoSoBHXH.DefaultText = "";
             this.txtSoSoBHXH.Font = new System.Drawing.Font("Segoe UI", 9.5F);
             this.txtSoSoBHXH.Location = new System.Drawing.Point(25, 85);
+            this.txtSoSoBHXH.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtSoSoBHXH.Name = "txtSoSoBHXH";
             this.txtSoSoBHXH.PlaceholderText = "Nhập mã số sổ...";
             this.txtSoSoBHXH.SelectedText = "";
@@ -888,7 +868,7 @@ namespace QLNS
             this.dtpNgayThamGia.Name = "dtpNgayThamGia";
             this.dtpNgayThamGia.Size = new System.Drawing.Size(260, 36);
             this.dtpNgayThamGia.TabIndex = 3;
-            this.dtpNgayThamGia.Value = new System.DateTime(2026, 5, 26, 0, 0, 0, 0);
+            this.dtpNgayThamGia.Value = new System.DateTime(2026, 5, 26, 8, 3, 1, 725);
             // 
             // lblMucDong
             // 
@@ -908,6 +888,7 @@ namespace QLNS
             this.txtMucDong.DefaultText = "";
             this.txtMucDong.Font = new System.Drawing.Font("Segoe UI", 9.5F);
             this.txtMucDong.Location = new System.Drawing.Point(25, 245);
+            this.txtMucDong.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtMucDong.Name = "txtMucDong";
             this.txtMucDong.PlaceholderText = "Ví dụ: 2,500,000";
             this.txtMucDong.SelectedText = "";
@@ -932,6 +913,7 @@ namespace QLNS
             this.txtNoiDK.DefaultText = "";
             this.txtNoiDK.Font = new System.Drawing.Font("Segoe UI", 9.5F);
             this.txtNoiDK.Location = new System.Drawing.Point(330, 85);
+            this.txtNoiDK.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtNoiDK.Name = "txtNoiDK";
             this.txtNoiDK.PlaceholderText = "Tên bệnh viện, trạm y tế...";
             this.txtNoiDK.SelectedText = "";
@@ -959,7 +941,10 @@ namespace QLNS
             this.cboTrangThaiBH.Font = new System.Drawing.Font("Segoe UI", 9.5F);
             this.cboTrangThaiBH.ForeColor = System.Drawing.Color.Black;
             this.cboTrangThaiBH.ItemHeight = 30;
-            this.cboTrangThaiBH.Items.AddRange(new object[] { "Đang tham gia", "Tạm dừng", "Đã chốt sổ" });
+            this.cboTrangThaiBH.Items.AddRange(new object[] {
+            "Đang tham gia",
+            "Tạm dừng",
+            "Đã chốt sổ"});
             this.cboTrangThaiBH.Location = new System.Drawing.Point(330, 165);
             this.cboTrangThaiBH.Name = "cboTrangThaiBH";
             this.cboTrangThaiBH.Size = new System.Drawing.Size(260, 36);
@@ -985,337 +970,16 @@ namespace QLNS
             this.lblTitle.TabIndex = 0;
             this.lblTitle.Text = "QUẢN LÝ BẢO HIỂM XÃ HỘI & Y TẾ";
             // 
-            // =====================================================================
-            // tabGiamTruGC — GIẢM TRỪ GIA CẢNH
-            // =====================================================================
-            // 
             // tabGiamTruGC
             // 
-            this.tabGiamTruGC.BackColor = System.Drawing.Color.White;
-            this.tabGiamTruGC.Controls.Add(this.dgvGiamTru);
-            this.tabGiamTruGC.Controls.Add(this.btnHuyGiamTru);
-            this.tabGiamTruGC.Controls.Add(this.btnXoaGiamTru);
-            this.tabGiamTruGC.Controls.Add(this.btnLuuGiamTru);
-            this.tabGiamTruGC.Controls.Add(this.btnThemGiamTru);
-            this.tabGiamTruGC.Controls.Add(this.gbGiamTru);
-            this.tabGiamTruGC.Controls.Add(this.pnlTieuDeGiamTru);
             this.tabGiamTruGC.Location = new System.Drawing.Point(4, 39);
             this.tabGiamTruGC.Name = "tabGiamTruGC";
+            this.tabGiamTruGC.Padding = new System.Windows.Forms.Padding(3);
             this.tabGiamTruGC.Size = new System.Drawing.Size(659, 749);
             this.tabGiamTruGC.TabIndex = 2;
             this.tabGiamTruGC.Text = "Giảm trừ gia cảnh";
-            // 
-            // pnlTieuDeGiamTru
-            // 
-            this.pnlTieuDeGiamTru.BackColor = System.Drawing.Color.Gainsboro;
-            this.pnlTieuDeGiamTru.Controls.Add(this.lblTitleGiamTru);
-            this.pnlTieuDeGiamTru.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlTieuDeGiamTru.Location = new System.Drawing.Point(0, 0);
-            this.pnlTieuDeGiamTru.Name = "pnlTieuDeGiamTru";
-            this.pnlTieuDeGiamTru.Size = new System.Drawing.Size(659, 54);
-            this.pnlTieuDeGiamTru.TabIndex = 0;
-            // 
-            // lblTitleGiamTru
-            // 
-            this.lblTitleGiamTru.BackColor = System.Drawing.Color.Transparent;
-            this.lblTitleGiamTru.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold);
-            this.lblTitleGiamTru.Location = new System.Drawing.Point(20, 10);
-            this.lblTitleGiamTru.Name = "lblTitleGiamTru";
-            this.lblTitleGiamTru.Size = new System.Drawing.Size(430, 33);
-            this.lblTitleGiamTru.TabIndex = 0;
-            this.lblTitleGiamTru.Text = "QUẢN LÝ GIẢM TRỪ GIA CẢNH";
-            // 
-            // gbGiamTru
-            // 
-            this.gbGiamTru.BorderRadius = 6;
-            this.gbGiamTru.Controls.Add(this.lblMaNVGiamTru);
-            this.gbGiamTru.Controls.Add(this.txtMaNVGiamTru);
-            this.gbGiamTru.Controls.Add(this.lblHoTenNPT);
-            this.gbGiamTru.Controls.Add(this.txtHoTenNPT);
-            this.gbGiamTru.Controls.Add(this.lblQuanHe);
-            this.gbGiamTru.Controls.Add(this.cboQuanHe);
-            this.gbGiamTru.Controls.Add(this.lblMaSoThueNPT);
-            this.gbGiamTru.Controls.Add(this.txtMaSoThueNPT);
-            this.gbGiamTru.Controls.Add(this.lblNgayBatDauGT);
-            this.gbGiamTru.Controls.Add(this.dtpNgayBatDauGT);
-            this.gbGiamTru.Controls.Add(this.lblNgayKetThucGT);
-            this.gbGiamTru.Controls.Add(this.dtpNgayKetThucGT);
-            this.gbGiamTru.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(242)))), ((int)(((byte)(245)))));
-            this.gbGiamTru.Font = new System.Drawing.Font("Segoe UI", 9.5F, System.Drawing.FontStyle.Bold);
-            this.gbGiamTru.ForeColor = System.Drawing.Color.IndianRed;
-            this.gbGiamTru.Location = new System.Drawing.Point(10, 61);
-            this.gbGiamTru.Name = "gbGiamTru";
-            this.gbGiamTru.Size = new System.Drawing.Size(638, 240);
-            this.gbGiamTru.TabIndex = 1;
-            this.gbGiamTru.Text = "Thông tin người phụ thuộc";
-            // 
-            // lblMaNVGiamTru
-            // 
-            this.lblMaNVGiamTru.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.lblMaNVGiamTru.ForeColor = System.Drawing.Color.Black;
-            this.lblMaNVGiamTru.Location = new System.Drawing.Point(18, 40);
-            this.lblMaNVGiamTru.Name = "lblMaNVGiamTru";
-            this.lblMaNVGiamTru.Size = new System.Drawing.Size(100, 23);
-            this.lblMaNVGiamTru.TabIndex = 0;
-            this.lblMaNVGiamTru.Text = "Mã nhân viên:";
-            // 
-            // txtMaNVGiamTru
-            // 
-            this.txtMaNVGiamTru.BorderRadius = 4;
-            this.txtMaNVGiamTru.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtMaNVGiamTru.DefaultText = "";
-            this.txtMaNVGiamTru.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtMaNVGiamTru.Location = new System.Drawing.Point(125, 35);
-            this.txtMaNVGiamTru.Name = "txtMaNVGiamTru";
-            this.txtMaNVGiamTru.PlaceholderText = "Tự động điền...";
-            this.txtMaNVGiamTru.ReadOnly = true;
-            this.txtMaNVGiamTru.SelectedText = "";
-            this.txtMaNVGiamTru.Size = new System.Drawing.Size(180, 30);
-            this.txtMaNVGiamTru.TabIndex = 1;
-            // 
-            // lblHoTenNPT
-            // 
-            this.lblHoTenNPT.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.lblHoTenNPT.ForeColor = System.Drawing.Color.Black;
-            this.lblHoTenNPT.Location = new System.Drawing.Point(323, 40);
-            this.lblHoTenNPT.Name = "lblHoTenNPT";
-            this.lblHoTenNPT.Size = new System.Drawing.Size(120, 23);
-            this.lblHoTenNPT.TabIndex = 2;
-            this.lblHoTenNPT.Text = "Họ tên người PT (*):";
-            // 
-            // txtHoTenNPT
-            // 
-            this.txtHoTenNPT.BorderRadius = 4;
-            this.txtHoTenNPT.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtHoTenNPT.DefaultText = "";
-            this.txtHoTenNPT.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtHoTenNPT.Location = new System.Drawing.Point(447, 35);
-            this.txtHoTenNPT.Name = "txtHoTenNPT";
-            this.txtHoTenNPT.PlaceholderText = "Nhập họ tên...";
-            this.txtHoTenNPT.SelectedText = "";
-            this.txtHoTenNPT.Size = new System.Drawing.Size(170, 30);
-            this.txtHoTenNPT.TabIndex = 3;
-            // 
-            // lblQuanHe
-            // 
-            this.lblQuanHe.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.lblQuanHe.ForeColor = System.Drawing.Color.Black;
-            this.lblQuanHe.Location = new System.Drawing.Point(18, 90);
-            this.lblQuanHe.Name = "lblQuanHe";
-            this.lblQuanHe.Size = new System.Drawing.Size(100, 23);
-            this.lblQuanHe.TabIndex = 4;
-            this.lblQuanHe.Text = "Quan hệ (*):";
-            // 
-            // cboQuanHe
-            // 
-            this.cboQuanHe.BackColor = System.Drawing.Color.Transparent;
-            this.cboQuanHe.BorderRadius = 4;
-            this.cboQuanHe.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cboQuanHe.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboQuanHe.FocusedColor = System.Drawing.Color.Empty;
-            this.cboQuanHe.Font = new System.Drawing.Font("Segoe UI", 9.5F);
-            this.cboQuanHe.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.cboQuanHe.ItemHeight = 28;
-            this.cboQuanHe.Items.AddRange(new object[] {
-                "Vợ / Chồng",
-                "Con ruột",
-                "Con nuôi hợp pháp",
-                "Cha / Mẹ đẻ",
-                "Cha / Mẹ vợ (chồng)",
-                "Anh / Chị / Em ruột",
-                "Ông / Bà nội ngoại",
-                "Cháu ruột"});
-            this.cboQuanHe.Location = new System.Drawing.Point(125, 85);
-            this.cboQuanHe.Name = "cboQuanHe";
-            this.cboQuanHe.Size = new System.Drawing.Size(180, 34);
-            this.cboQuanHe.TabIndex = 5;
-            // 
-            // lblMaSoThueNPT
-            // 
-            this.lblMaSoThueNPT.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.lblMaSoThueNPT.ForeColor = System.Drawing.Color.Black;
-            this.lblMaSoThueNPT.Location = new System.Drawing.Point(323, 90);
-            this.lblMaSoThueNPT.Name = "lblMaSoThueNPT";
-            this.lblMaSoThueNPT.Size = new System.Drawing.Size(120, 23);
-            this.lblMaSoThueNPT.TabIndex = 6;
-            this.lblMaSoThueNPT.Text = "Mã số thuế NPT:";
-            // 
-            // txtMaSoThueNPT
-            // 
-            this.txtMaSoThueNPT.BorderRadius = 4;
-            this.txtMaSoThueNPT.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtMaSoThueNPT.DefaultText = "";
-            this.txtMaSoThueNPT.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtMaSoThueNPT.Location = new System.Drawing.Point(447, 85);
-            this.txtMaSoThueNPT.Name = "txtMaSoThueNPT";
-            this.txtMaSoThueNPT.PlaceholderText = "Nhập MST (nếu có)...";
-            this.txtMaSoThueNPT.SelectedText = "";
-            this.txtMaSoThueNPT.Size = new System.Drawing.Size(170, 30);
-            this.txtMaSoThueNPT.TabIndex = 7;
-            // 
-            // lblNgayBatDauGT
-            // 
-            this.lblNgayBatDauGT.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.lblNgayBatDauGT.ForeColor = System.Drawing.Color.Black;
-            this.lblNgayBatDauGT.Location = new System.Drawing.Point(18, 140);
-            this.lblNgayBatDauGT.Name = "lblNgayBatDauGT";
-            this.lblNgayBatDauGT.Size = new System.Drawing.Size(100, 23);
-            this.lblNgayBatDauGT.TabIndex = 8;
-            this.lblNgayBatDauGT.Text = "Ngày bắt đầu:";
-            // 
-            // dtpNgayBatDauGT
-            // 
-            this.dtpNgayBatDauGT.BorderRadius = 4;
-            this.dtpNgayBatDauGT.BorderThickness = 1;
-            this.dtpNgayBatDauGT.Checked = true;
-            this.dtpNgayBatDauGT.FillColor = System.Drawing.Color.White;
-            this.dtpNgayBatDauGT.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.dtpNgayBatDauGT.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpNgayBatDauGT.Location = new System.Drawing.Point(125, 135);
-            this.dtpNgayBatDauGT.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
-            this.dtpNgayBatDauGT.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
-            this.dtpNgayBatDauGT.Name = "dtpNgayBatDauGT";
-            this.dtpNgayBatDauGT.Size = new System.Drawing.Size(180, 34);
-            this.dtpNgayBatDauGT.TabIndex = 9;
-            this.dtpNgayBatDauGT.Value = new System.DateTime(2026, 5, 31, 0, 0, 0, 0);
-            // 
-            // lblNgayKetThucGT
-            // 
-            this.lblNgayKetThucGT.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.lblNgayKetThucGT.ForeColor = System.Drawing.Color.Black;
-            this.lblNgayKetThucGT.Location = new System.Drawing.Point(323, 140);
-            this.lblNgayKetThucGT.Name = "lblNgayKetThucGT";
-            this.lblNgayKetThucGT.Size = new System.Drawing.Size(120, 23);
-            this.lblNgayKetThucGT.TabIndex = 10;
-            this.lblNgayKetThucGT.Text = "Ngày kết thúc:";
-            // 
-            // dtpNgayKetThucGT
-            // 
-            this.dtpNgayKetThucGT.BorderRadius = 4;
-            this.dtpNgayKetThucGT.BorderThickness = 1;
-            this.dtpNgayKetThucGT.Checked = false;
-            this.dtpNgayKetThucGT.FillColor = System.Drawing.Color.White;
-            this.dtpNgayKetThucGT.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.dtpNgayKetThucGT.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpNgayKetThucGT.Location = new System.Drawing.Point(447, 135);
-            this.dtpNgayKetThucGT.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
-            this.dtpNgayKetThucGT.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
-            this.dtpNgayKetThucGT.Name = "dtpNgayKetThucGT";
-            this.dtpNgayKetThucGT.ShowCheckBox = true;
-            this.dtpNgayKetThucGT.Size = new System.Drawing.Size(170, 34);
-            this.dtpNgayKetThucGT.TabIndex = 11;
-            this.dtpNgayKetThucGT.Value = new System.DateTime(2026, 5, 31, 0, 0, 0, 0);
-            // 
-            // btnThemGiamTru
-            // 
-            this.btnThemGiamTru.BorderRadius = 6;
-            this.btnThemGiamTru.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnThemGiamTru.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(204)))), ((int)(((byte)(113)))));
-            this.btnThemGiamTru.Font = new System.Drawing.Font("Segoe UI", 9.5F, System.Drawing.FontStyle.Bold);
-            this.btnThemGiamTru.ForeColor = System.Drawing.Color.White;
-            this.btnThemGiamTru.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(174)))), ((int)(((byte)(96)))));
-            this.btnThemGiamTru.Location = new System.Drawing.Point(10, 317);
-            this.btnThemGiamTru.Name = "btnThemGiamTru";
-            this.btnThemGiamTru.Size = new System.Drawing.Size(130, 42);
-            this.btnThemGiamTru.TabIndex = 2;
-            this.btnThemGiamTru.Text = "Thêm mới";
-            // 
-            // btnLuuGiamTru
-            // 
-            this.btnLuuGiamTru.BorderRadius = 6;
-            this.btnLuuGiamTru.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
-            this.btnLuuGiamTru.Font = new System.Drawing.Font("Segoe UI", 9.5F, System.Drawing.FontStyle.Bold);
-            this.btnLuuGiamTru.ForeColor = System.Drawing.Color.White;
-            this.btnLuuGiamTru.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
-            this.btnLuuGiamTru.Location = new System.Drawing.Point(152, 317);
-            this.btnLuuGiamTru.Name = "btnLuuGiamTru";
-            this.btnLuuGiamTru.Size = new System.Drawing.Size(130, 42);
-            this.btnLuuGiamTru.TabIndex = 3;
-            this.btnLuuGiamTru.Text = "Lưu";
-            // 
-            // btnXoaGiamTru
-            // 
-            this.btnXoaGiamTru.BorderRadius = 6;
-            this.btnXoaGiamTru.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(76)))), ((int)(((byte)(60)))));
-            this.btnXoaGiamTru.Font = new System.Drawing.Font("Segoe UI", 9.5F, System.Drawing.FontStyle.Bold);
-            this.btnXoaGiamTru.ForeColor = System.Drawing.Color.White;
-            this.btnXoaGiamTru.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(41)))), ((int)(((byte)(43)))));
-            this.btnXoaGiamTru.Location = new System.Drawing.Point(294, 317);
-            this.btnXoaGiamTru.Name = "btnXoaGiamTru";
-            this.btnXoaGiamTru.Size = new System.Drawing.Size(130, 42);
-            this.btnXoaGiamTru.TabIndex = 4;
-            this.btnXoaGiamTru.Text = "Xóa";
-            // 
-            // btnHuyGiamTru
-            // 
-            this.btnHuyGiamTru.BorderRadius = 6;
-            this.btnHuyGiamTru.FillColor = System.Drawing.Color.Silver;
-            this.btnHuyGiamTru.Font = new System.Drawing.Font("Segoe UI", 9.5F, System.Drawing.FontStyle.Bold);
-            this.btnHuyGiamTru.ForeColor = System.Drawing.Color.White;
-            this.btnHuyGiamTru.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(160)))), ((int)(((byte)(160)))));
-            this.btnHuyGiamTru.Location = new System.Drawing.Point(436, 317);
-            this.btnHuyGiamTru.Name = "btnHuyGiamTru";
-            this.btnHuyGiamTru.Size = new System.Drawing.Size(130, 42);
-            this.btnHuyGiamTru.TabIndex = 5;
-            this.btnHuyGiamTru.Text = "Hủy bỏ";
-            // 
-            // dgvGiamTru
-            // 
-            this.dgvGiamTru.AllowUserToAddRows = false;
-            this.dgvGiamTru.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(247)))), ((int)(((byte)(255)))));
-            this.dgvGiamTru.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvGiamTru.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvGiamTru.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvGiamTru.ColumnHeadersHeight = 29;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvGiamTru.DefaultCellStyle = dataGridViewCellStyle3;
-            this.dgvGiamTru.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvGiamTru.Location = new System.Drawing.Point(10, 375);
-            this.dgvGiamTru.Name = "dgvGiamTru";
-            this.dgvGiamTru.ReadOnly = true;
-            this.dgvGiamTru.RowHeadersVisible = false;
-            this.dgvGiamTru.RowHeadersWidth = 51;
-            this.dgvGiamTru.Size = new System.Drawing.Size(638, 360);
-            this.dgvGiamTru.TabIndex = 6;
-            this.dgvGiamTru.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(247)))), ((int)(((byte)(255)))));
-            this.dgvGiamTru.ThemeStyle.AlternatingRowsStyle.Font = null;
-            this.dgvGiamTru.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
-            this.dgvGiamTru.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
-            this.dgvGiamTru.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
-            this.dgvGiamTru.ThemeStyle.BackColor = System.Drawing.Color.White;
-            this.dgvGiamTru.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvGiamTru.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.dgvGiamTru.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.dgvGiamTru.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F);
-            this.dgvGiamTru.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
-            this.dgvGiamTru.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.dgvGiamTru.ThemeStyle.HeaderStyle.Height = 29;
-            this.dgvGiamTru.ThemeStyle.ReadOnly = true;
-            this.dgvGiamTru.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
-            this.dgvGiamTru.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.dgvGiamTru.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F);
-            this.dgvGiamTru.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            this.dgvGiamTru.ThemeStyle.RowsStyle.Height = 24;
-            this.dgvGiamTru.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvGiamTru.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            // 
-            // =====================================================================
-            // tabTaiSan
-            // =====================================================================
+            this.tabGiamTruGC.UseVisualStyleBackColor = true;
+            this.InitGiamTruGiaCanh();
             // 
             // tabTaiSan
             // 
@@ -1402,6 +1066,7 @@ namespace QLNS
             this.txtTimKiem.DefaultText = "";
             this.txtTimKiem.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtTimKiem.Location = new System.Drawing.Point(99, 55);
+            this.txtTimKiem.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtTimKiem.Name = "txtTimKiem";
             this.txtTimKiem.PlaceholderText = "";
             this.txtTimKiem.SelectedText = "";
@@ -1419,7 +1084,6 @@ namespace QLNS
             this.btnHienThi.Size = new System.Drawing.Size(95, 30);
             this.btnHienThi.TabIndex = 5;
             this.btnHienThi.Text = "Load NV";
-            this.btnHienThi.Click += new System.EventHandler(this.btnHienThi_Click);
             // 
             // btnTimKiem
             // 
@@ -1431,7 +1095,6 @@ namespace QLNS
             this.btnTimKiem.Size = new System.Drawing.Size(75, 30);
             this.btnTimKiem.TabIndex = 5;
             this.btnTimKiem.Text = "Tìm";
-            this.btnTimKiem.Click += new System.EventHandler(this.btnTimKiem_Click);
             // 
             // dgvNhanVien1
             // 
@@ -1439,7 +1102,8 @@ namespace QLNS
             this.dgvNhanVien1.AllowUserToDeleteRows = false;
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
             this.dgvNhanVien1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
-            this.dgvNhanVien1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) | System.Windows.Forms.AnchorStyles.Left)));
+            this.dgvNhanVien1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            | System.Windows.Forms.AnchorStyles.Left)));
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1486,7 +1150,6 @@ namespace QLNS
             this.dgvNhanVien1.ThemeStyle.RowsStyle.Height = 22;
             this.dgvNhanVien1.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvNhanVien1.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            this.dgvNhanVien1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvNhanVien1_CellClick);
             // 
             // tabPageXuatDS
             // 
@@ -1507,6 +1170,21 @@ namespace QLNS
             this.tabPage1.Text = "tabPage1";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // cboChucDanh
+            // 
+            this.cboChucDanh.BackColor = System.Drawing.Color.Transparent;
+            this.cboChucDanh.BorderRadius = 4;
+            this.cboChucDanh.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cboChucDanh.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboChucDanh.FocusedColor = System.Drawing.Color.Empty;
+            this.cboChucDanh.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cboChucDanh.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.cboChucDanh.ItemHeight = 24;
+            this.cboChucDanh.Location = new System.Drawing.Point(279, 171);
+            this.cboChucDanh.Name = "cboChucDanh";
+            this.cboChucDanh.Size = new System.Drawing.Size(340, 30);
+            this.cboChucDanh.TabIndex = 1;
+            // 
             // FormNhanVien
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -1514,7 +1192,6 @@ namespace QLNS
             this.Controls.Add(this.tabMain);
             this.Name = "FormNhanVien";
             this.Text = "FormNhanVien";
-            this.Load += new System.EventHandler(this.FormNhanVien_Load);
             this.tabMain.ResumeLayout(false);
             this.pageNhanVien.ResumeLayout(false);
             this.pnlRight.ResumeLayout(false);
@@ -1527,90 +1204,405 @@ namespace QLNS
             this.gbBaoHiem.PerformLayout();
             this.pnlTieuDeBaoHiem.ResumeLayout(false);
             this.pnlTieuDeBaoHiem.PerformLayout();
-            this.tabGiamTruGC.ResumeLayout(false);
-            this.pnlTieuDeGiamTru.ResumeLayout(false);
-            this.pnlTieuDeGiamTru.PerformLayout();
-            this.gbGiamTru.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvGiamTru)).EndInit();
             this.pnlLeft.ResumeLayout(false);
             this.pnlLeft.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNhanVien1)).EndInit();
             this.ResumeLayout(false);
+
         }
+
+        private void InitGiamTruGiaCanh()
+        {
+            // ── Khởi tạo control ──────────────────────────────────────────
+            this.pnlTieuDeGiamTru = new Guna.UI2.WinForms.Guna2Panel();
+            this.lblTitleGiamTru = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.gbGiamTru = new Guna.UI2.WinForms.Guna2GroupBox();
+
+            this.lblMaNVGiamTru = new System.Windows.Forms.Label();
+            this.txtMaNVGiamTru = new Guna.UI2.WinForms.Guna2TextBox();
+
+            this.lblHoTenNPT = new System.Windows.Forms.Label();
+            this.txtHoTenNPT = new Guna.UI2.WinForms.Guna2TextBox();
+
+            this.lblQuanHe = new System.Windows.Forms.Label();
+            this.cboQuanHe = new Guna.UI2.WinForms.Guna2ComboBox();
+
+            this.lblMaSoThueNPT = new System.Windows.Forms.Label();
+            this.txtMaSoThueNPT = new Guna.UI2.WinForms.Guna2TextBox();
+
+            this.lblNgayBatDauGT = new System.Windows.Forms.Label();
+            this.dtpNgayBatDauGT = new Guna.UI2.WinForms.Guna2DateTimePicker();
+
+            this.lblNgayKetThucGT = new System.Windows.Forms.Label();
+            this.dtpNgayKetThucGT = new Guna.UI2.WinForms.Guna2DateTimePicker();
+
+            this.btnThemGiamTru = new Guna.UI2.WinForms.Guna2Button();
+            this.btnLuuGiamTru = new Guna.UI2.WinForms.Guna2Button();
+            this.btnXoaGiamTru = new Guna.UI2.WinForms.Guna2Button();
+            this.btnHuyGiamTru = new Guna.UI2.WinForms.Guna2Button();
+
+            this.dgvGiamTru = new Guna.UI2.WinForms.Guna2DataGridView();
+
+            // ── pnlTieuDeGiamTru ─────────────────────────────────────────
+            this.pnlTieuDeGiamTru.BackColor = System.Drawing.Color.Gainsboro;
+            this.pnlTieuDeGiamTru.Controls.Add(this.lblTitleGiamTru);
+            this.pnlTieuDeGiamTru.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlTieuDeGiamTru.Location = new System.Drawing.Point(0, 0);
+            this.pnlTieuDeGiamTru.Name = "pnlTieuDeGiamTru";
+            this.pnlTieuDeGiamTru.Size = new System.Drawing.Size(659, 54);
+            this.pnlTieuDeGiamTru.TabIndex = 0;
+
+            // ── lblTitleGiamTru ───────────────────────────────────────────
+            this.lblTitleGiamTru.BackColor = System.Drawing.Color.Transparent;
+            this.lblTitleGiamTru.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold);
+            this.lblTitleGiamTru.Location = new System.Drawing.Point(20, 10);
+            this.lblTitleGiamTru.Name = "lblTitleGiamTru";
+            this.lblTitleGiamTru.Size = new System.Drawing.Size(450, 33);
+            this.lblTitleGiamTru.TabIndex = 0;
+            this.lblTitleGiamTru.Text = "QUẢN LÝ GIẢM TRỪ GIA CẢNH";
+
+            // ── gbGiamTru (form nhập liệu) ────────────────────────────────
+            this.gbGiamTru.BorderRadius = 6;
+            this.gbGiamTru.CustomBorderColor = System.Drawing.Color.FromArgb(240, 242, 245);
+            this.gbGiamTru.Font = new System.Drawing.Font("Segoe UI", 9.5F, System.Drawing.FontStyle.Bold);
+            this.gbGiamTru.ForeColor = System.Drawing.Color.IndianRed;
+            this.gbGiamTru.Location = new System.Drawing.Point(10, 61);
+            this.gbGiamTru.Name = "gbGiamTru";
+            this.gbGiamTru.Size = new System.Drawing.Size(638, 240);
+            this.gbGiamTru.TabIndex = 1;
+            this.gbGiamTru.Text = "Thông tin người phụ thuộc";
+
+            // ── Hàng 1: Mã NV + Họ tên NPT ───────────────────────────────
+            // Mã nhân viên (readonly, tự điền khi chọn NV trên grid bên trái)
+            this.lblMaNVGiamTru.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.lblMaNVGiamTru.ForeColor = System.Drawing.Color.Black;
+            this.lblMaNVGiamTru.Location = new System.Drawing.Point(18, 40);
+            this.lblMaNVGiamTru.Name = "lblMaNVGiamTru";
+            this.lblMaNVGiamTru.Size = new System.Drawing.Size(100, 23);
+            this.lblMaNVGiamTru.Text = "Mã nhân viên:";
+
+            this.txtMaNVGiamTru.BorderRadius = 4;
+            this.txtMaNVGiamTru.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtMaNVGiamTru.DefaultText = "";
+            this.txtMaNVGiamTru.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtMaNVGiamTru.Location = new System.Drawing.Point(125, 35);
+            this.txtMaNVGiamTru.Name = "txtMaNVGiamTru";
+            this.txtMaNVGiamTru.PlaceholderText = "Tự động điền...";
+            this.txtMaNVGiamTru.ReadOnly = true;
+            this.txtMaNVGiamTru.SelectedText = "";
+            this.txtMaNVGiamTru.Size = new System.Drawing.Size(180, 30);
+            this.txtMaNVGiamTru.TabIndex = 0;
+
+            // Họ tên người phụ thuộc
+            this.lblHoTenNPT.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.lblHoTenNPT.ForeColor = System.Drawing.Color.Black;
+            this.lblHoTenNPT.Location = new System.Drawing.Point(323, 40);
+            this.lblHoTenNPT.Name = "lblHoTenNPT";
+            this.lblHoTenNPT.Size = new System.Drawing.Size(120, 23);
+            this.lblHoTenNPT.Text = "Họ tên người PT (*):";
+
+            this.txtHoTenNPT.BorderRadius = 4;
+            this.txtHoTenNPT.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtHoTenNPT.DefaultText = "";
+            this.txtHoTenNPT.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtHoTenNPT.Location = new System.Drawing.Point(447, 35);
+            this.txtHoTenNPT.Name = "txtHoTenNPT";
+            this.txtHoTenNPT.PlaceholderText = "Nhập họ tên...";
+            this.txtHoTenNPT.SelectedText = "";
+            this.txtHoTenNPT.Size = new System.Drawing.Size(170, 30);
+            this.txtHoTenNPT.TabIndex = 1;
+
+            // ── Hàng 2: Quan hệ + Mã số thuế NPT ────────────────────────
+            this.lblQuanHe.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.lblQuanHe.ForeColor = System.Drawing.Color.Black;
+            this.lblQuanHe.Location = new System.Drawing.Point(18, 90);
+            this.lblQuanHe.Name = "lblQuanHe";
+            this.lblQuanHe.Size = new System.Drawing.Size(100, 23);
+            this.lblQuanHe.Text = "Quan hệ (*):";
+
+            this.cboQuanHe.BackColor = System.Drawing.Color.Transparent;
+            this.cboQuanHe.BorderRadius = 4;
+            this.cboQuanHe.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cboQuanHe.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboQuanHe.Font = new System.Drawing.Font("Segoe UI", 9.5F);
+            this.cboQuanHe.ForeColor = System.Drawing.Color.FromArgb(68, 88, 112);
+            this.cboQuanHe.ItemHeight = 28;
+            this.cboQuanHe.Items.AddRange(new object[] {
+                "Vợ / Chồng",
+                "Con ruột",
+                "Con nuôi hợp pháp",
+                "Cha / Mẹ đẻ",
+                "Cha / Mẹ vợ (chồng)",
+                "Anh / Chị / Em ruột",
+                "Ông / Bà nội ngoại",
+                "Cháu ruột"
+            });
+            this.cboQuanHe.Location = new System.Drawing.Point(125, 85);
+            this.cboQuanHe.Name = "cboQuanHe";
+            this.cboQuanHe.Size = new System.Drawing.Size(180, 34);
+            this.cboQuanHe.TabIndex = 2;
+
+            this.lblMaSoThueNPT.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.lblMaSoThueNPT.ForeColor = System.Drawing.Color.Black;
+            this.lblMaSoThueNPT.Location = new System.Drawing.Point(323, 90);
+            this.lblMaSoThueNPT.Name = "lblMaSoThueNPT";
+            this.lblMaSoThueNPT.Size = new System.Drawing.Size(120, 23);
+            this.lblMaSoThueNPT.Text = "Mã số thuế NPT:";
+
+            this.txtMaSoThueNPT.BorderRadius = 4;
+            this.txtMaSoThueNPT.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtMaSoThueNPT.DefaultText = "";
+            this.txtMaSoThueNPT.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtMaSoThueNPT.Location = new System.Drawing.Point(447, 85);
+            this.txtMaSoThueNPT.Name = "txtMaSoThueNPT";
+            this.txtMaSoThueNPT.PlaceholderText = "Nhập MST (nếu có)...";
+            this.txtMaSoThueNPT.SelectedText = "";
+            this.txtMaSoThueNPT.Size = new System.Drawing.Size(170, 30);
+            this.txtMaSoThueNPT.TabIndex = 3;
+
+            // ── Hàng 3: Ngày bắt đầu + Ngày kết thúc ────────────────────
+            this.lblNgayBatDauGT.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.lblNgayBatDauGT.ForeColor = System.Drawing.Color.Black;
+            this.lblNgayBatDauGT.Location = new System.Drawing.Point(18, 140);
+            this.lblNgayBatDauGT.Name = "lblNgayBatDauGT";
+            this.lblNgayBatDauGT.Size = new System.Drawing.Size(100, 23);
+            this.lblNgayBatDauGT.Text = "Ngày bắt đầu:";
+
+            this.dtpNgayBatDauGT.BorderRadius = 4;
+            this.dtpNgayBatDauGT.BorderThickness = 1;
+            this.dtpNgayBatDauGT.Checked = true;
+            this.dtpNgayBatDauGT.FillColor = System.Drawing.Color.White;
+            this.dtpNgayBatDauGT.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.dtpNgayBatDauGT.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpNgayBatDauGT.Location = new System.Drawing.Point(125, 135);
+            this.dtpNgayBatDauGT.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.dtpNgayBatDauGT.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.dtpNgayBatDauGT.Name = "dtpNgayBatDauGT";
+            this.dtpNgayBatDauGT.Size = new System.Drawing.Size(180, 34);
+            this.dtpNgayBatDauGT.TabIndex = 4;
+            this.dtpNgayBatDauGT.Value = System.DateTime.Now;
+
+            this.lblNgayKetThucGT.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.lblNgayKetThucGT.ForeColor = System.Drawing.Color.Black;
+            this.lblNgayKetThucGT.Location = new System.Drawing.Point(323, 140);
+            this.lblNgayKetThucGT.Name = "lblNgayKetThucGT";
+            this.lblNgayKetThucGT.Size = new System.Drawing.Size(120, 23);
+            this.lblNgayKetThucGT.Text = "Ngày kết thúc:";
+
+            this.dtpNgayKetThucGT.BorderRadius = 4;
+            this.dtpNgayKetThucGT.BorderThickness = 1;
+            this.dtpNgayKetThucGT.Checked = false; // Cho phép để trống (đang còn hiệu lực)
+            this.dtpNgayKetThucGT.FillColor = System.Drawing.Color.White;
+            this.dtpNgayKetThucGT.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.dtpNgayKetThucGT.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpNgayKetThucGT.Location = new System.Drawing.Point(447, 135);
+            this.dtpNgayKetThucGT.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.dtpNgayKetThucGT.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.dtpNgayKetThucGT.Name = "dtpNgayKetThucGT";
+            this.dtpNgayKetThucGT.ShowCheckBox = true; // Tích vào mới bật — nghĩa là "còn hiệu lực"
+            this.dtpNgayKetThucGT.Size = new System.Drawing.Size(170, 34);
+            this.dtpNgayKetThucGT.TabIndex = 5;
+            this.dtpNgayKetThucGT.Value = System.DateTime.Now;
+
+            // ── Nút hành động ─────────────────────────────────────────────
+            // btnThemGiamTru — Thêm mới (xanh lá)
+            this.btnThemGiamTru.Anchor = System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left;
+            this.btnThemGiamTru.BorderRadius = 6;
+            this.btnThemGiamTru.DisabledState.FillColor = System.Drawing.Color.FromArgb(169, 169, 169);
+            this.btnThemGiamTru.FillColor = System.Drawing.Color.FromArgb(46, 204, 113);
+            this.btnThemGiamTru.Font = new System.Drawing.Font("Segoe UI", 9.5F, System.Drawing.FontStyle.Bold);
+            this.btnThemGiamTru.ForeColor = System.Drawing.Color.White;
+            this.btnThemGiamTru.HoverState.FillColor = System.Drawing.Color.FromArgb(39, 174, 96);
+            this.btnThemGiamTru.Location = new System.Drawing.Point(10, 317);
+            this.btnThemGiamTru.Name = "btnThemGiamTru";
+            this.btnThemGiamTru.Size = new System.Drawing.Size(130, 42);
+            this.btnThemGiamTru.TabIndex = 6;
+            this.btnThemGiamTru.Text = "➕ Thêm";
+
+            // btnLuuGiamTru — Lưu / Cập nhật (xanh dương)
+            this.btnLuuGiamTru.Anchor = System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left;
+            this.btnLuuGiamTru.BorderRadius = 6;
+            this.btnLuuGiamTru.FillColor = System.Drawing.Color.FromArgb(52, 152, 219);
+            this.btnLuuGiamTru.Font = new System.Drawing.Font("Segoe UI", 9.5F, System.Drawing.FontStyle.Bold);
+            this.btnLuuGiamTru.ForeColor = System.Drawing.Color.White;
+            this.btnLuuGiamTru.HoverState.FillColor = System.Drawing.Color.FromArgb(41, 128, 185);
+            this.btnLuuGiamTru.Location = new System.Drawing.Point(152, 317);
+            this.btnLuuGiamTru.Name = "btnLuuGiamTru";
+            this.btnLuuGiamTru.Size = new System.Drawing.Size(130, 42);
+            this.btnLuuGiamTru.TabIndex = 7;
+            this.btnLuuGiamTru.Text = "💾 Lưu";
+
+            // btnXoaGiamTru — Xóa (đỏ)
+            this.btnXoaGiamTru.Anchor = System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left;
+            this.btnXoaGiamTru.BorderRadius = 6;
+            this.btnXoaGiamTru.FillColor = System.Drawing.Color.FromArgb(231, 76, 60);
+            this.btnXoaGiamTru.Font = new System.Drawing.Font("Segoe UI", 9.5F, System.Drawing.FontStyle.Bold);
+            this.btnXoaGiamTru.ForeColor = System.Drawing.Color.White;
+            this.btnXoaGiamTru.HoverState.FillColor = System.Drawing.Color.FromArgb(192, 41, 43);
+            this.btnXoaGiamTru.Location = new System.Drawing.Point(294, 317);
+            this.btnXoaGiamTru.Name = "btnXoaGiamTru";
+            this.btnXoaGiamTru.Size = new System.Drawing.Size(130, 42);
+            this.btnXoaGiamTru.TabIndex = 8;
+            this.btnXoaGiamTru.Text = "🗑 Xóa";
+
+            // btnHuyGiamTru — Hủy (xám)
+            this.btnHuyGiamTru.Anchor = System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left;
+            this.btnHuyGiamTru.BorderRadius = 6;
+            this.btnHuyGiamTru.FillColor = System.Drawing.Color.Silver;
+            this.btnHuyGiamTru.Font = new System.Drawing.Font("Segoe UI", 9.5F, System.Drawing.FontStyle.Bold);
+            this.btnHuyGiamTru.ForeColor = System.Drawing.Color.White;
+            this.btnHuyGiamTru.HoverState.FillColor = System.Drawing.Color.FromArgb(160, 160, 160);
+            this.btnHuyGiamTru.Location = new System.Drawing.Point(436, 317);
+            this.btnHuyGiamTru.Name = "btnHuyGiamTru";
+            this.btnHuyGiamTru.Size = new System.Drawing.Size(130, 42);
+            this.btnHuyGiamTru.TabIndex = 9;
+            this.btnHuyGiamTru.Text = "✖ Hủy bỏ";
+
+            // ── dgvGiamTru (danh sách người phụ thuộc) ───────────────────
+            var headerStyle = new System.Windows.Forms.DataGridViewCellStyle
+            {
+                Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft,
+                BackColor = System.Drawing.Color.FromArgb(100, 88, 255),
+                ForeColor = System.Drawing.Color.White,
+                Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F),
+                WrapMode = System.Windows.Forms.DataGridViewTriState.True,
+                SelectionBackColor = System.Drawing.SystemColors.Highlight,
+                SelectionForeColor = System.Drawing.SystemColors.HighlightText
+            };
+            var cellStyle = new System.Windows.Forms.DataGridViewCellStyle
+            {
+                Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft,
+                BackColor = System.Drawing.Color.White,
+                ForeColor = System.Drawing.Color.FromArgb(71, 69, 94),
+                Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F),
+                SelectionBackColor = System.Drawing.Color.FromArgb(231, 229, 255),
+                SelectionForeColor = System.Drawing.Color.FromArgb(71, 69, 94)
+            };
+
+            this.dgvGiamTru.AllowUserToAddRows = false;
+            this.dgvGiamTru.AllowUserToDeleteRows = false;
+            this.dgvGiamTru.Anchor = System.Windows.Forms.AnchorStyles.Top
+                                                        | System.Windows.Forms.AnchorStyles.Bottom
+                                                        | System.Windows.Forms.AnchorStyles.Left
+                                                        | System.Windows.Forms.AnchorStyles.Right;
+            this.dgvGiamTru.ColumnHeadersDefaultCellStyle = headerStyle;
+            this.dgvGiamTru.ColumnHeadersHeight = 29;
+            this.dgvGiamTru.DefaultCellStyle = cellStyle;
+            this.dgvGiamTru.GridColor = System.Drawing.Color.FromArgb(231, 229, 255);
+            this.dgvGiamTru.Location = new System.Drawing.Point(10, 375);
+            this.dgvGiamTru.Name = "dgvGiamTru";
+            this.dgvGiamTru.ReadOnly = true;
+            this.dgvGiamTru.RowHeadersVisible = false;
+            this.dgvGiamTru.RowHeadersWidth = 51;
+            this.dgvGiamTru.Size = new System.Drawing.Size(638, 360);
+            this.dgvGiamTru.TabIndex = 10;
+            // Cấu hình ThemeStyle đồng bộ dgvNhanVien1
+            this.dgvGiamTru.ThemeStyle.BackColor = System.Drawing.Color.White;
+            this.dgvGiamTru.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(231, 229, 255);
+            this.dgvGiamTru.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(100, 88, 255);
+            this.dgvGiamTru.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dgvGiamTru.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F);
+            this.dgvGiamTru.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
+            this.dgvGiamTru.ThemeStyle.HeaderStyle.Height = 29;
+            this.dgvGiamTru.ThemeStyle.ReadOnly = true;
+            this.dgvGiamTru.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
+            this.dgvGiamTru.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.dgvGiamTru.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F);
+            this.dgvGiamTru.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(71, 69, 94);
+            this.dgvGiamTru.ThemeStyle.RowsStyle.Height = 24;
+            this.dgvGiamTru.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(231, 229, 255);
+            this.dgvGiamTru.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(71, 69, 94);
+            this.dgvGiamTru.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(248, 247, 255);
+            // Sự kiện click hàng → đổ dữ liệu lên form
+
+            // ── Thêm controls vào gbGiamTru ──────────────────────────────
+            this.gbGiamTru.Controls.AddRange(new System.Windows.Forms.Control[] {
+                this.lblMaNVGiamTru,   this.txtMaNVGiamTru,
+                this.lblHoTenNPT,      this.txtHoTenNPT,
+                this.lblQuanHe,        this.cboQuanHe,
+                this.lblMaSoThueNPT,   this.txtMaSoThueNPT,
+                this.lblNgayBatDauGT,  this.dtpNgayBatDauGT,
+                this.lblNgayKetThucGT, this.dtpNgayKetThucGT
+            });
+
+            // ── Thêm tất cả vào tabGiamTruGC ─────────────────────────────
+            this.tabGiamTruGC.BackColor = System.Drawing.Color.White;
+            this.tabGiamTruGC.Controls.AddRange(new System.Windows.Forms.Control[] {
+                this.pnlTieuDeGiamTru,
+                this.gbGiamTru,
+                this.btnThemGiamTru,
+                this.btnLuuGiamTru,
+                this.btnXoaGiamTru,
+                this.btnHuyGiamTru,
+                this.dgvGiamTru
+            });
+        }
+
+
 
         #endregion
 
-        // ── Các tab chính ──────────────────────────────────────────────
         private Guna.UI2.WinForms.Guna2TabControl tabMain;
         private System.Windows.Forms.TabPage pageNhanVien;
-        private Guna.UI2.WinForms.Guna2Panel pnlLeft;
-        private Guna.UI2.WinForms.Guna2Panel pnlRight;
         private Guna.UI2.WinForms.Guna2TabControl tabRight;
         private System.Windows.Forms.TabPage pageChiTiet;
         private System.Windows.Forms.TabPage pageBaoHiem;
-        private System.Windows.Forms.TabPage tabGiamTruGC;
-        private System.Windows.Forms.TabPage tabTaiSan;
-        private System.Windows.Forms.TabPage tabPageXuatDS;
-        private System.Windows.Forms.TabPage tabPage1;
+        private Guna.UI2.WinForms.Guna2Panel pnlLeft;
+        private Guna.UI2.WinForms.Guna2Panel pnlRight;
+        private Guna.UI2.WinForms.Guna2GroupBox gbChiTiet;
 
-        // ── pnlLeft ────────────────────────────────────────────────────
+        private System.Windows.Forms.Label lblTimKiem;
         private System.Windows.Forms.Label lblPhongBan;
+        private System.Windows.Forms.Label lblMaNV;
+        private System.Windows.Forms.Label lblHoTen;
+        private System.Windows.Forms.Label lblGioiTinh;
+        private System.Windows.Forms.Label lblPhongBan2;
+        private System.Windows.Forms.Label lblChucDanh;
+        private System.Windows.Forms.Label lblNgaySinh;
+
+        private System.Windows.Forms.Label lblSDT;
+        private System.Windows.Forms.Label lblDiaChi;
+        private System.Windows.Forms.Label lblEmailCN;
+        private System.Windows.Forms.Label lblEmailCT;
+        private System.Windows.Forms.Label lblMST;
+        private System.Windows.Forms.Label lblCCCD;
+        private System.Windows.Forms.Label lblNoiCap;
+        private System.Windows.Forms.Label lblNganHang;
+        private System.Windows.Forms.Label lblNgayCap;
+        private System.Windows.Forms.Label lblTK;
+
+        private Guna.UI2.WinForms.Guna2DataGridView dgvNhanVien1;
+        private Guna.UI2.WinForms.Guna2TextBox txtMaNhanVien;
+        private Guna.UI2.WinForms.Guna2TextBox txtHoTen;
+        private Guna.UI2.WinForms.Guna2TextBox txtGioiTinh;
+        private Guna.UI2.WinForms.Guna2TextBox txtPhongBan;
+        private Guna.UI2.WinForms.Guna2TextBox txtSoDienThoai;
+        private Guna.UI2.WinForms.Guna2TextBox txtDiaChi;
+        private Guna.UI2.WinForms.Guna2TextBox txtEmailCaNhan;
+        private Guna.UI2.WinForms.Guna2TextBox txtEmailCongTy;
+        private Guna.UI2.WinForms.Guna2TextBox txtCCCD;
+        private Guna.UI2.WinForms.Guna2TextBox txtNoiCapCCCD;
+        private Guna.UI2.WinForms.Guna2TextBox txtTenNganHang;
+        private Guna.UI2.WinForms.Guna2TextBox txtMaSoThue;
+        private Guna.UI2.WinForms.Guna2TextBox txtSoTK;
+        private Guna.UI2.WinForms.Guna2DateTimePicker dtpNgaySinh;
+        private Guna.UI2.WinForms.Guna2DateTimePicker dtpNgayCapCCCD;
         private Guna.UI2.WinForms.Guna2ComboBox cboPhongBan;
         private Guna.UI2.WinForms.Guna2CheckBox chkChonPB;
-        private System.Windows.Forms.Label lblTimKiem;
         private Guna.UI2.WinForms.Guna2TextBox txtTimKiem;
         private Guna.UI2.WinForms.Guna2Button btnTimKiem;
-        private Guna.UI2.WinForms.Guna2Button btnHienThi;
-        private Guna.UI2.WinForms.Guna2DataGridView dgvNhanVien1;
-
-        // ── pageChiTiet ────────────────────────────────────────────────
-        private Guna.UI2.WinForms.Guna2PictureBox picAvatar;
-        private Guna.UI2.WinForms.Guna2Button btnChonAnh;
-        private Guna.UI2.WinForms.Guna2Button btnLuu;
-        private System.Windows.Forms.Label lblMaNV;
-        private Guna.UI2.WinForms.Guna2TextBox txtMaNhanVien;
-        private System.Windows.Forms.Label lblHoTen;
-        private Guna.UI2.WinForms.Guna2TextBox txtHoTen;
-        private System.Windows.Forms.Label lblGioiTinh;
-        private Guna.UI2.WinForms.Guna2TextBox txtGioiTinh;
-        private System.Windows.Forms.Label lblPhongBan2;
-        private Guna.UI2.WinForms.Guna2TextBox txtPhongBan;
-        private System.Windows.Forms.Label lblChucDanh;
-        private Guna.UI2.WinForms.Guna2ComboBox cboChucDanh;
-        private System.Windows.Forms.Label lblNgaySinh;
-        private Guna.UI2.WinForms.Guna2DateTimePicker dtpNgaySinh;
-        private Guna.UI2.WinForms.Guna2GroupBox gbChiTiet;
-        private System.Windows.Forms.Label lblSDT;
-        private Guna.UI2.WinForms.Guna2TextBox txtSoDienThoai;
-        private System.Windows.Forms.Label lblDiaChi;
-        private Guna.UI2.WinForms.Guna2TextBox txtDiaChi;
-        private System.Windows.Forms.Label lblEmailCN;
-        private Guna.UI2.WinForms.Guna2TextBox txtEmailCaNhan;
-        private System.Windows.Forms.Label lblEmailCT;
-        private Guna.UI2.WinForms.Guna2TextBox txtEmailCongTy;
-        private System.Windows.Forms.Label lblMST;
-        private Guna.UI2.WinForms.Guna2TextBox txtMaSoThue;
-        private System.Windows.Forms.Label lblTK;
-        private Guna.UI2.WinForms.Guna2TextBox txtSoTK;
-        private System.Windows.Forms.Label lblCCCD;
-        private Guna.UI2.WinForms.Guna2TextBox txtCCCD;
-        private System.Windows.Forms.Label lblNgayCap;
-        private Guna.UI2.WinForms.Guna2DateTimePicker dtpNgayCapCCCD;
-        private System.Windows.Forms.Label lblNoiCap;
-        private Guna.UI2.WinForms.Guna2TextBox txtNoiCapCCCD;
-        private System.Windows.Forms.Label lblNganHang;
-        private Guna.UI2.WinForms.Guna2TextBox txtTenNganHang;
+        private System.Windows.Forms.TabPage tabPageXuatDS;
         private Guna.UI2.WinForms.Guna2Button btnThem;
         private Guna.UI2.WinForms.Guna2Button btnSua;
         private Guna.UI2.WinForms.Guna2Button btnXoa;
-
-        // ── pageBaoHiem ────────────────────────────────────────────────
-        private Guna.UI2.WinForms.Guna2Panel pnlTieuDeBaoHiem;
-        private Guna.UI2.WinForms.Guna2HtmlLabel lblTitle;
+        private Guna.UI2.WinForms.Guna2Button btnHienThi;
+        private Guna.UI2.WinForms.Guna2PictureBox picAvatar;
+        private Guna.UI2.WinForms.Guna2Button btnChonAnh;
+        private Guna.UI2.WinForms.Guna2Button btnLuu;
+        private Guna.UI2.WinForms.Guna2Button btnLuuBaoHiem;
+        private Guna.UI2.WinForms.Guna2Button btnHuyBaoHiem;
         private Guna.UI2.WinForms.Guna2GroupBox gbBaoHiem;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblSoSoBHXH;
-        private Guna.UI2.WinForms.Guna2TextBox txtMaNhanVien2;
         private Guna.UI2.WinForms.Guna2TextBox txtSoSoBHXH;
         private System.Windows.Forms.Label lblNgayThamGia;
         private Guna.UI2.WinForms.Guna2DateTimePicker dtpNgayThamGia;
@@ -1620,10 +1612,16 @@ namespace QLNS
         private Guna.UI2.WinForms.Guna2TextBox txtNoiDK;
         private System.Windows.Forms.Label lblTrangThaiBH;
         private Guna.UI2.WinForms.Guna2ComboBox cboTrangThaiBH;
-        private Guna.UI2.WinForms.Guna2Button btnLuuBaoHiem;
-        private Guna.UI2.WinForms.Guna2Button btnHuyBaoHiem;
+        private Guna.UI2.WinForms.Guna2Panel pnlTieuDeBaoHiem;
+        private Guna.UI2.WinForms.Guna2HtmlLabel lblTitle;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.TabPage tabGiamTruGC;
+        private System.Windows.Forms.TabPage tabTaiSan;
+        private System.Windows.Forms.Label label1;
+        private Guna.UI2.WinForms.Guna2TextBox txtMaNhanVien2;
+        private Guna.UI2.WinForms.Guna2ComboBox cboChucDanh;
 
-        // ── tabGiamTruGC ───────────────────────────────────────────────
+
         private Guna.UI2.WinForms.Guna2Panel pnlTieuDeGiamTru;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblTitleGiamTru;
         private Guna.UI2.WinForms.Guna2GroupBox gbGiamTru;
@@ -1646,4 +1644,3 @@ namespace QLNS
         private Guna.UI2.WinForms.Guna2DataGridView dgvGiamTru;
     }
 }
-
