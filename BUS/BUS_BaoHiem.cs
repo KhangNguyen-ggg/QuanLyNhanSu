@@ -14,7 +14,7 @@ namespace BUS
         public List<ET_BaoHiem> LayThongTinBaoHiem(string maNV)
         {
             DAL_BaoHiem dAL_BaoHiem = new DAL_BaoHiem();
-            var query = dAL_BaoHiem.LayThongTinBaoHiem(maNV);
+            var query = dAL_BaoHiem.LayThongTinBaoHiem(maNV).Where(bh => bh.MaNhanVien == maNV);
             return query.Select(item => new ET_BaoHiem
             {
                 MaNhanVien = item.MaNhanVien,

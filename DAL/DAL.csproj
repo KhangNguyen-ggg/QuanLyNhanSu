@@ -47,6 +47,7 @@
     <Compile Include="DAL_BaoHiem.cs" />
     <Compile Include="DAL_ChiTietNhanVien.cs" />
     <Compile Include="DAL_ChucDanh.cs" />
+    <Compile Include="DAL_GiamTruGiaCanh.cs" />
     <Compile Include="DAL_NhanVien.cs" />
     <Compile Include="DAL_PhongBan.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

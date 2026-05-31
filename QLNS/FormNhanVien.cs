@@ -16,7 +16,8 @@ namespace QLNS
         private BUS_ChiTietNhanVien busChiTietNhanVien = new BUS_ChiTietNhanVien();
         private BUS_PhongBan busPhongBan = new BUS_PhongBan();
         private BUS_ChucDanh busChucDanh = new BUS_ChucDanh();
-        private BUS_BaoHiem busBaoHiem = new BUS_BaoHiem(); 
+        private BUS_BaoHiem busBaoHiem = new BUS_BaoHiem();
+        private BUS_GiamTruGiaCanh busGiamTru = new BUS_GiamTruGiaCanh();
         private string currentMaNV = "";
 
         public FormNhanVien()
@@ -228,13 +229,6 @@ namespace QLNS
             tabRight.SelectedTab = pageChiTiet;
         }
 
-
-        private void btnLuuBaoHiem_Click(object sender, EventArgs e)
-        {
-                
-        }
-
-
         // --- HÀM TỔNG QUẢN: KIỂM TRA ĐANG Ở TAB NÀO THÌ LOAD TAB ĐÓ ---
         private void LoadDataForCurrentTab()
         {
@@ -250,7 +244,11 @@ namespace QLNS
             {
                 LoadTabBaoHiem(currentMaNV);
             }
-            // (Sau này bạn thêm các else if cho pageGiaCanh, pageDaoTao... vào đây)
+            else if (tabRight.SelectedTab == pageGiamTruGC)
+            {
+                LoadTabGiamTru();
+            }
+
         }
 
         // --- HÀM LOAD TAB CHI TIẾT 
@@ -333,28 +331,26 @@ namespace QLNS
         {
             try
             {
-                // Tầng BUS của bạn đang trả về List, ta dùng FirstOrDefault để lấy ra người duy nhất
                 var dsBaoHiem = busBaoHiem.LayThongTinBaoHiem(maNV);
-                var baoHiemInfo = dsBaoHiem.FirstOrDefault();
 
-                if (baoHiemInfo != null)
+                // Phải kiểm tra Count > 0 để chắc chắn danh sách không bị rỗng
+                if (dsBaoHiem != null && dsBaoHiem.Count > 0)
                 {
-                    // NẾU ĐÃ CÓ BẢO HIỂM: Đổ dữ liệu lên UI
+                    var baoHiemInfo = dsBaoHiem[0];
                     txtSoSoBHXH.Text = baoHiemInfo.SoSoBHXH;
                     dtpNgayThamGia.Value = baoHiemInfo.NgayThamGia ?? DateTime.Now;
                     txtNoiDK.Text = baoHiemInfo.NoiDangKyKhamBenh;
-                    txtMucDong.Text = baoHiemInfo.MucDong?.ToString("N0") ?? ""; // Format hiển thị số tiền có dấu phẩy
+                    txtMucDong.Text = baoHiemInfo.MucDong?.ToString("N0") ?? "";
                     cboTrangThaiBH.Text = baoHiemInfo.TrangThai;
-
                 }
                 else
                 {
-                    // NẾU CHƯA CÓ: Làm sạch giao diện để chuẩn bị thêm mới
+                    // NẾU CHƯA CÓ: Làm sạch giao diện
                     txtSoSoBHXH.Clear();
                     dtpNgayThamGia.Value = DateTime.Now;
                     txtNoiDK.Clear();
                     txtMucDong.Clear();
-                    cboTrangThaiBH.Text = "Chưa tham gia"; // Trạng thái mặc định thực tế
+                    cboTrangThaiBH.Text = "Chưa tham gia";
                 }
             }
             catch (Exception ex)
@@ -368,7 +364,7 @@ namespace QLNS
             LoadDataForCurrentTab();
         }
 
-        private void btnLuuBaoHiem_Click_1(object sender, EventArgs e)
+        private void btnLuuBaoHiem_Click(object sender, EventArgs e)
         {
             // 1. Kiểm tra xem người dùng đã click chọn nhân viên nào trên lưới chưa
             if (string.IsNullOrEmpty(currentMaNV))
@@ -421,9 +417,216 @@ namespace QLNS
 
             // Chọn sẵn "Chưa tham gia" làm giá trị mặc định cho người mới
             cboTrangThaiBH.SelectedIndex = 0;
-            
+
         }
 
-        
+        //giảm trừ gia cảnh
+        //load 
+        private void LoadTabGiamTru()
+        {
+            try
+            {
+                var giamTruInfo = busGiamTru.LayDsTheoMa(currentMaNV);
+                dgvGiamTru.DataSource = giamTruInfo;
+
+                // 3. Kiểm tra: Nếu danh sách có dữ liệu (lớn hơn 0 người)
+                if (giamTruInfo.Count > 0)
+                {
+                    var nguoiDauTien = giamTruInfo[0];
+
+                    txtMaNVGiamTru.Text = nguoiDauTien.MaNhanVien;
+                    txtMaGT.Text = nguoiDauTien.MaGiamTru;
+                    txtHoTenNPT.Text = nguoiDauTien.HoTenNguoiPhuThuoc;
+                    cboQuanHe.Text = nguoiDauTien.QuanHe;
+                    txtMaSoThueNPT.Text = nguoiDauTien.MaSoThue;
+                    dtpNgayBatDauGT.Value = nguoiDauTien.NgayBatDau ?? DateTime.Now;
+
+                    // Xử lý CheckBox và Ngày kết thúc
+                    if (nguoiDauTien.NgayKetThuc.HasValue)
+                    {
+                        dtpNgayKetThucGT.Value = nguoiDauTien.NgayKetThuc.Value;
+                    }
+                    else
+                    {
+                        dtpNgayKetThucGT.Value = DateTime.Now;
+                    }
+
+                }
+                else
+                {
+                    txtMaGT.Clear();
+                    txtHoTenNPT.Clear();
+                    cboQuanHe.SelectedIndex = -1;
+                    txtMaSoThueNPT.Clear();
+                    dtpNgayBatDauGT.Value = DateTime.Now;
+                    dtpNgayKetThucGT.Value = DateTime.Now;
+                }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show("Lỗi tải thông tin gia cảnh: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnHuyGiamTru_Click(object sender, EventArgs e)
+        {
+            //chuyển sang page chi tiết
+            tabRight.SelectedTab = pageChiTiet;
+        }
+
+        private void btnThemGiamTru_Click(object sender, EventArgs e)
+        {
+            // 1. Validate: Kiểm tra đã chọn Nhân viên và nhập đủ Tên chưa
+            if (string.IsNullOrEmpty(currentMaNV))
+            {
+                MessageBox.Show("Vui lòng chọn nhân viên ở danh sách bên trái!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            if (string.IsNullOrWhiteSpace(txtHoTenNPT.Text) || string.IsNullOrWhiteSpace(cboQuanHe.Text))
+            {
+                MessageBox.Show("Vui lòng nhập đầy đủ Họ tên và Quan hệ người phụ thuộc!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtHoTenNPT.Focus();
+                return;
+            }
+
+            try
+            {
+                // Tự động sinh mã tránh trùng lặp tuyệt đối (VD: GT2605311530)
+                string maTuDong = "GT" + DateTime.Now.ToString("yyMMddHHmmss");
+
+                ET_GiamTruGiaCanh gc = new ET_GiamTruGiaCanh
+                {
+                    MaGiamTru = maTuDong,
+                    MaNhanVien = currentMaNV,
+                    HoTenNguoiPhuThuoc = txtHoTenNPT.Text.Trim(),
+                    QuanHe = cboQuanHe.Text,
+                    MaSoThue = txtMaSoThueNPT.Text.Trim(),
+                    NgayBatDau = dtpNgayBatDauGT.Value,
+                    NgayKetThuc = dtpNgayKetThucGT.Value
+                };
+
+                if (busGiamTru.ThemGiamTru(gc))
+                {
+                    MessageBox.Show("Thêm người phụ thuộc thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    LoadTabGiamTru();
+                }
+                else
+                {
+                    MessageBox.Show("Thêm thất bại. Vui lòng kiểm tra lại!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi hệ thống: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+        }
+
+        private void btnLuuGiamTru_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtMaGT.Text))
+            {
+                MessageBox.Show("Vui lòng click chọn một người phụ thuộc trên lưới để sửa!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            try
+            {
+                ET_GiamTruGiaCanh gc = new ET_GiamTruGiaCanh
+                {
+                    MaGiamTru = txtMaGT.Text.Trim(), 
+                    MaNhanVien = currentMaNV,
+                    HoTenNguoiPhuThuoc = txtHoTenNPT.Text.Trim(),
+                    QuanHe = cboQuanHe.Text,
+                    MaSoThue = txtMaSoThueNPT.Text.Trim(),
+                    NgayBatDau = dtpNgayBatDauGT.Value,
+                    NgayKetThuc = dtpNgayKetThucGT.Value
+                };
+
+                if (busGiamTru.SuaGiamTru(gc))
+                {
+                    MessageBox.Show("Cập nhật thông tin thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    LoadTabGiamTru();
+                }
+                else
+                {
+                    MessageBox.Show("Cập nhật thất bại!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi hệ thống: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+
+        private void btnXoaGiamTru_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtMaGT.Text))
+            {
+                MessageBox.Show("Vui lòng click chọn một người phụ thuộc trên lưới để xóa!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // Xác nhận trước khi xóa
+            DialogResult result = MessageBox.Show($"Bạn có chắc chắn muốn xóa người phụ thuộc '{txtHoTenNPT.Text}' không?", "Xác nhận xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (result == DialogResult.Yes)
+            {
+                try
+                {
+                    if (busGiamTru.XoaGiamTru(txtMaGT.Text.Trim()))
+                    {
+                        MessageBox.Show("Xóa thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        LoadTabGiamTru(); 
+                    }
+                    else
+                    {
+                        MessageBox.Show("Xóa thất bại!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Lỗi hệ thống: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+            }
+        }
+
+        private void dgvGiamTru_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex < 0) return;
+
+            try
+            {
+                DataGridViewRow row = dgvGiamTru.Rows[e.RowIndex];
+
+                // Dùng dấu ? (Null-conditional) để tránh văng phần mềm nếu ô đó trong CSDL bị rỗng
+                txtMaGT.Text = row.Cells["MaGiamTru"].Value?.ToString() ?? "";
+                txtHoTenNPT.Text = row.Cells["HoTenNguoiPhuThuoc"].Value?.ToString() ?? "";
+                cboQuanHe.Text = row.Cells["QuanHe"].Value?.ToString() ?? "";
+                txtMaSoThueNPT.Text = row.Cells["MaSoThue"].Value?.ToString() ?? "";
+
+                if (row.Cells["NgayBatDau"].Value != null)
+                {
+                    dtpNgayBatDauGT.Value = Convert.ToDateTime(row.Cells["NgayBatDau"].Value);
+                }
+
+                if (row.Cells["NgayKetThuc"].Value != null)
+                {
+                    dtpNgayKetThucGT.Value = Convert.ToDateTime(row.Cells["NgayKetThuc"].Value);
+                }
+                else
+                {
+                    dtpNgayKetThucGT.Value = DateTime.Now;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi hiển thị chi tiết: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+        }
     }
 }

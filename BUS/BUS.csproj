@@ -44,6 +44,7 @@
     <Compile Include="BUS_BaoHiem.cs" />
     <Compile Include="BUS_ChiTietNhanVien.cs" />
     <Compile Include="BUS_ChucDanh.cs" />
+    <Compile Include="BUS_GiamTruGiaCanh.cs" />
     <Compile Include="BUS_NhanVien.cs" />
     <Compile Include="BUS_PhongBan.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
