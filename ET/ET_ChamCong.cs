@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ET
 {
-    internal class ET_ChamCong
+    public class ET_ChamCong
     {
         //beo
     }

@@ -18,6 +18,7 @@ namespace QLNS
         private BUS_ChucDanh busChucDanh = new BUS_ChucDanh();
         private BUS_BaoHiem busBaoHiem = new BUS_BaoHiem();
         private BUS_GiamTruGiaCanh busGiamTru = new BUS_GiamTruGiaCanh();
+        private BUS_TaiSanCapPhat busTaiSanCapPhat = new BUS_TaiSanCapPhat();
         private string currentMaNV = "";
 
         public FormNhanVien()
@@ -247,6 +248,10 @@ namespace QLNS
             else if (tabRight.SelectedTab == pageGiamTruGC)
             {
                 LoadTabGiamTru();
+            }
+            else if (tabRight.SelectedTab == pageTaiSan)
+            {
+                LoadTabTaiSan(currentMaNV);
             }
 
         }
@@ -535,7 +540,7 @@ namespace QLNS
             {
                 ET_GiamTruGiaCanh gc = new ET_GiamTruGiaCanh
                 {
-                    MaGiamTru = txtMaGT.Text.Trim(), 
+                    MaGiamTru = txtMaGT.Text.Trim(),
                     MaNhanVien = currentMaNV,
                     HoTenNguoiPhuThuoc = txtHoTenNPT.Text.Trim(),
                     QuanHe = cboQuanHe.Text,
@@ -579,7 +584,7 @@ namespace QLNS
                     if (busGiamTru.XoaGiamTru(txtMaGT.Text.Trim()))
                     {
                         MessageBox.Show("Xóa thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        LoadTabGiamTru(); 
+                        LoadTabGiamTru();
                     }
                     else
                     {
@@ -628,5 +633,192 @@ namespace QLNS
             }
 
         }
+
+
+        //========================= TAB TÀI SẢN CẤP PHÁT =========================
+        private void LoadTabTaiSan(string maNV)
+        {
+            try
+            {
+                var dsTaiSan = busTaiSanCapPhat.LayDsTheoMa(maNV);
+                dgvTaiSan.DataSource = dsTaiSan;
+
+                if (dsTaiSan != null && dsTaiSan.Count > 0)
+                {
+                    var ts = dsTaiSan[0];
+                    txtMaCapPhat.Text = ts.MaCapPhat;
+                    txtMaNVCapPhat.Text = ts.MaNhanVien;
+                    cboLoai.Text = ts.LoaiTaiSan;
+                    txtSoSeri.Text = ts.SoSeri;
+                    dtpNgayCapPhat.Value = ts.NgayCapPhat ?? DateTime.Now;
+                    txtTinhTrangCapPhat.Text = ts.TinhTrang;
+                }
+                else
+                {
+                    txtMaCapPhat.Clear();
+                    txtMaNVCapPhat.Clear();
+                    cboLoai.SelectedIndex = -1;
+                    txtSoSeri.Clear();
+                    dtpNgayCapPhat.Value = DateTime.Now;
+                    txtTinhTrangCapPhat.Text = "";
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi tải tài sản: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void dgvTaiSan_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            // Bỏ qua nếu click nhầm vào tiêu đề cột
+            if (e.RowIndex < 0) return;
+
+            try
+            {
+                DataGridViewRow row = dgvTaiSan.Rows[e.RowIndex];
+
+                // Đổ dữ liệu an toàn bằng toán tử ? để chống lỗi Null
+                txtMaCapPhat.Text = row.Cells["MaCapPhat"].Value?.ToString() ?? "";
+                txtMaNVCapPhat.Text = row.Cells["MaNhanVien"].Value?.ToString() ?? "";
+                cboLoai.Text = row.Cells["LoaiTaiSan"].Value?.ToString() ?? "";
+                txtSoSeri.Text = row.Cells["SoSeri"].Value?.ToString() ?? "";
+                txtTinhTrangCapPhat.Text = row.Cells["TinhTrang"].Value?.ToString() ?? "";
+
+                // Xử lý ngày cấp phát
+                if (row.Cells["NgayCapPhat"].Value != null)
+                {
+                    dtpNgayCapPhat.Value = Convert.ToDateTime(row.Cells["NgayCapPhat"].Value);
+                }
+                else
+                {
+                    dtpNgayCapPhat.Value = DateTime.Now;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi hiển thị chi tiết tài sản: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnThemCP_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(currentMaNV))
+            {
+                MessageBox.Show("Vui lòng chọn nhân viên ở danh sách bên trái!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            if (string.IsNullOrWhiteSpace(cboLoai.Text))
+            {
+                MessageBox.Show("Vui lòng chọn hoặc nhập Loại tài sản!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                cboLoai.Focus();
+                return;
+            }
+
+            try
+            {
+                // Tự động sinh mã tài sản không bao giờ trùng (VD: TS260531102030)
+                string maTuDong = "TS" + DateTime.Now.ToString("yyMMddHHmmss");
+
+                ET_TaiSanCapPhat ts = new ET_TaiSanCapPhat
+                {
+                    MaCapPhat = maTuDong,
+                    MaNhanVien = currentMaNV,
+                    LoaiTaiSan = cboLoai.Text.Trim(),
+                    SoSeri = txtSoSeri.Text.Trim(),
+                    NgayCapPhat = dtpNgayCapPhat.Value,
+                    TinhTrang = txtTinhTrangCapPhat.Text.Trim()
+                };
+
+                if (busTaiSanCapPhat.ThemTaiSan(ts))
+                {
+                    MessageBox.Show("Cấp phát tài sản thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    LoadTabTaiSan(currentMaNV); // Load lại lưới ngay lập tức
+                }
+                else
+                {
+                    MessageBox.Show("Thêm thất bại. Vui lòng kiểm tra lại!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi hệ thống: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnLuuCP_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtMaCapPhat.Text))
+            {
+                MessageBox.Show("Vui lòng click chọn một tài sản trên lưới để cập nhật!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            try
+            {
+                ET_TaiSanCapPhat ts = new ET_TaiSanCapPhat
+                {
+                    MaCapPhat = txtMaCapPhat.Text.Trim(), // Lấy mã hiện tại để SQL biết cập nhật dòng nào
+                    MaNhanVien = currentMaNV,
+                    LoaiTaiSan = cboLoai.Text.Trim(),
+                    SoSeri = txtSoSeri.Text.Trim(),
+                    NgayCapPhat = dtpNgayCapPhat.Value,
+                    TinhTrang = txtTinhTrangCapPhat.Text.Trim()
+                };
+
+                if (busTaiSanCapPhat.SuaTaiSan(ts))
+                {
+                    MessageBox.Show("Cập nhật tài sản thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    LoadTabTaiSan(currentMaNV);
+                }
+                else
+                {
+                    MessageBox.Show("Cập nhật thất bại!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi hệ thống: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnXoaCp_Click(object sender, EventArgs e)
+        {
+            string maCapPhat = txtMaCapPhat.Text.Trim();
+            if (string.IsNullOrEmpty(maCapPhat))
+            {
+                MessageBox.Show("Vui lòng click chọn một tài sản trên lưới để xóa!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            DialogResult result = MessageBox.Show($"Bạn có chắc chắn muốn xóa tài sản '{cboLoai.Text}' không?", "Xác nhận xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (result == DialogResult.Yes)
+            {
+                try
+                {
+                    if (busTaiSanCapPhat.XoaTaiSan(maCapPhat))
+                    {
+                        MessageBox.Show("Thu hồi / Xóa tài sản thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        LoadTabTaiSan(currentMaNV);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Xóa thất bại!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Lỗi hệ thống: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        private void btnHuyCP_Click(object sender, EventArgs e)
+        {
+            tabRight.SelectedTab = pageChiTiet;
+        }
     }
+
 }
